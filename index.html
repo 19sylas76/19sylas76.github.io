@@ -6,135 +6,109 @@
 <title>Myles Russell</title>
 
 <style>
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background:#0b0d10;
-  color:#eaeaea;
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b0c10;
+  color: #eaeaea;
 }
 
-.nav{
-  display:flex;
-  justify-content:space-between;
-  padding:18px 28px;
-  font-size:14px;
-  opacity:.85;
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #0f141b;
+  border-bottom: 1px solid #1b2230;
 }
 
-.nav a{
-  color:#eaeaea;
-  margin-left:16px;
-  text-decoration:none;
+.nav a {
+  color: #eaeaea;
+  margin-left: 14px;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
 }
 
-.wrap{
-  max-width:900px;
-  margin:auto;
-  padding:50px 22px;
+/* WRAP */
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
 }
 
 /* HERO */
-.hero h1{
-  font-size:56px;
-  margin:0 0 10px;
-  letter-spacing:-1px;
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
 }
 
-.hero p{
-  font-size:18px;
-  opacity:.75;
-  max-width:700px;
-  line-height:1.6;
+.hero-main {
+  background: #121826;
+  padding: 22px;
 }
 
-/* FEATURE */
-.feature{
-  margin-top:70px;
+.hero-side {
+  display: grid;
+  gap: 12px;
 }
 
-.label{
-  font-size:12px;
-  letter-spacing:2px;
-  opacity:.5;
-  margin-bottom:12px;
+.box {
+  background: #121826;
+  padding: 16px;
 }
 
-.feature h2{
-  font-size:26px;
-  margin:0 0 10px;
-}
-
-.feature p{
-  opacity:.8;
-  max-width:750px;
-}
-
-/* ROW */
-.row{
-  display:flex;
-  gap:60px;
-  margin-top:70px;
-  flex-wrap:wrap;
-}
-
-.col{
-  flex:1;
-  min-width:240px;
-}
-
-.col h3{
-  font-size:13px;
-  letter-spacing:2px;
-  opacity:.6;
-  margin-bottom:8px;
-}
-
-.col p{
-  opacity:.8;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
 }
 
 /* BLOG */
-.post{
-  padding:16px 0;
-  border-bottom:1px solid rgba(255,255,255,0.06);
+.blog {
+  margin-top: 30px;
 }
 
-.post-title{
-  font-size:16px;
+.post {
+  padding: 14px 0;
+  border-bottom: 1px solid #1b2230;
 }
 
-.post-meta{
-  font-size:12px;
-  opacity:.5;
-  margin-top:4px;
+/* SECTION LABEL */
+.label {
+  font-size: 12px;
+  opacity: 0.5;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 /* NOW */
-.now{
-  margin-top:80px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,0.08);
-}
-
-.now p{
-  opacity:.75;
-  max-width:750px;
+.now {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #1b2230;
 }
 
 /* FOOTER */
-.footer{
-  margin-top:80px;
-  font-size:12px;
-  opacity:.4;
+.footer {
+  margin-top: 40px;
+  font-size: 12px;
+  opacity: 0.4;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
   <div><strong>Myles Russell</strong></div>
   <div>
+    <a href="#">Home</a>
     <a href="#">Blog</a>
     <a href="#">Books</a>
     <a href="#">Building</a>
@@ -146,69 +120,43 @@ body{
 
   <!-- HERO -->
   <div class="hero">
-    <h1>I build things and document them.</h1>
-    <p>
-      Websites, programming, writing, music, gaming, and long-form creative work.
-    </p>
+
+    <div class="hero-main">
+      <div class="label">FEATURED</div>
+      <h2>Main Story Area</h2>
+      <p>This is your main featured post or highlight.</p>
+    </div>
+
+    <div class="hero-side">
+      <div class="box">Latest Blog</div>
+      <div class="box">Books</div>
+    </div>
+
   </div>
 
-  <!-- FEATURE -->
-  <div class="feature">
-    <div class="label">FEATURED</div>
-    <h2>Rebuilding structure, not identity</h2>
-    <p>
-      A central place for code, writing, music, and long-term creative projects. I use this site to organize work, thoughts, and ongoing output across different areas.
-    </p>
-  </div>
-
-  <!-- DOMAINS -->
-  <div class="row">
-
-    <div class="col">
-      <h3>PROGRAMMING</h3>
-      <p>Web development, Python, AI tooling, systems thinking.</p>
-    </div>
-
-    <div class="col">
-      <h3>WRITING</h3>
-      <p>Books, daily blog, long-form narrative work.</p>
-    </div>
-
-    <div class="col">
-      <h3>MUSIC</h3>
-      <p>Guitar playing and ongoing practice.</p>
-    </div>
-
+  <!-- GRID -->
+  <div class="grid">
+    <div class="box">Building</div>
+    <div class="box">Music</div>
+    <div class="box">Gaming</div>
   </div>
 
   <!-- BLOG -->
-  <div class="feature">
+  <div class="blog">
     <div class="label">BLOG</div>
 
-    <div class="post">
-      <div class="post-title">Daily writing as structure, not inspiration</div>
-      <div class="post-meta">writing</div>
-    </div>
-
-    <div class="post">
-      <div class="post-title">Revisiting programming fundamentals through practice</div>
-      <div class="post-meta">code</div>
-    </div>
-
-    <div class="post">
-      <div class="post-title">Why long-term games stick (WoW, systems, habit loops)</div>
-      <div class="post-meta">gaming</div>
-    </div>
+    <div class="post">Post 1</div>
+    <div class="post">Post 2</div>
+    <div class="post">Post 3</div>
   </div>
 
   <!-- NOW -->
   <div class="now">
     <div class="label">NOW</div>
-    <p>
-      Writing daily, building web projects, developing programming skills through practice, and maintaining long-term creative work in writing and music.
-    </p>
+    <p>Short current status line goes here.</p>
   </div>
 
+  <!-- FOOTER -->
   <div class="footer">
     Built by Myles Russell
   </div>
