@@ -7,43 +7,69 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: #e5e7eb;
+      line-height: 1.6;
     }
 
     header {
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
-      background: #111827;
+      background: linear-gradient(135deg, #111827, #0b1220);
     }
 
     h1 {
+      font-size: 44px;
       margin: 0;
-      font-size: 40px;
     }
 
-    p {
-      font-size: 18px;
+    .subtitle {
       opacity: 0.8;
+      margin-top: 10px;
+      font-size: 18px;
     }
 
     section {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 900px;
+      margin: 50px auto;
       padding: 0 20px;
     }
 
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-left: 4px solid #60a5fa;
+      padding-left: 10px;
+    }
+
     .card {
-      background: #1f2937;
+      background: #111827;
       padding: 20px;
-      border-radius: 10px;
       margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #1f2937;
+    }
+
+    .card h3 {
+      margin-top: 0;
     }
 
     a {
       color: #60a5fa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.6;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -51,28 +77,51 @@
 <body>
 
 <header>
-  <h1>My Data Analyst Portfolio</h1>
-  <p>SQL • Python • Excel • Data Visualization</p>
+  <h1>Your Name</h1>
+  <div class="subtitle">Aspiring Data Analyst • SQL • Python • Excel • Dashboards</div>
 </header>
 
 <section>
-  <h2>Projects</h2>
-
+  <div class="section-title">About Me</div>
   <div class="card">
-    <h3>Project 1</h3>
-    <p>Replace this with your SQL / dataset project.</p>
-  </div>
-
-  <div class="card">
-    <h3>Project 2</h3>
-    <p>Replace this with another project.</p>
-  </div>
-
-  <div class="card">
-    <h3>Contact</h3>
-    <p>Email: yourname@email.com</p>
+    I’m building skills in data analysis, focusing on SQL, Python, and turning raw data into useful insights.
   </div>
 </section>
+
+<section>
+  <div class="section-title">Projects</div>
+
+  <div class="card">
+    <h3>Sales Data Analysis (SQL)</h3>
+    <p>Cleaned and analyzed sales data to identify trends and top-performing categories.</p>
+    <a href="#">View Project (coming soon)</a>
+  </div>
+
+  <div class="card">
+    <h3>Python Data Cleaning Script</h3>
+    <p>Built a script to clean messy datasets and prepare them for analysis.</p>
+    <a href="#">View Code (coming soon)</a>
+  </div>
+
+  <div class="card">
+    <h3>Dashboard Project</h3>
+    <p>Created a simple dashboard to visualize key business metrics.</p>
+    <a href="#">View Dashboard (coming soon)</a>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Contact</div>
+  <div class="card">
+    Email: yourname@email.com<br/>
+    GitHub: github.com/yourusername<br/>
+    LinkedIn: coming soon
+  </div>
+</section>
+
+<footer>
+  Built with GitHub Pages
+</footer>
 
 </body>
 </html>
