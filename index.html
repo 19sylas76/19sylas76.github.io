@@ -5,195 +5,233 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Myles Russell</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-  body {
-    margin: 0;
-    font-family: Inter, sans-serif;
-    background: #f2f0eb;
-    color: #111;
+  body{
+    margin:0;
+    font-family: system-ui, Arial, sans-serif;
+    background:#fff;
+    color:#111;
+    line-height:1.55;
   }
 
-  /* TOP STRIP */
-  .top {
-    display: flex;
-    justify-content: space-between;
-    padding: 24px 40px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  header{
+    max-width:980px;
+    margin:0 auto;
+    padding:70px 20px 30px;
   }
 
-  /* HERO */
-  .hero {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    height: 80vh;
+  h1{
+    font-size:44px;
+    margin:0;
+    letter-spacing:-0.02em;
   }
 
-  .hero-left {
-    padding: 80px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .sub{
+    margin-top:10px;
+    color:#444;
+    max-width:700px;
+    font-size:16px;
   }
 
-  .hero h1 {
-    font-family: "DM Serif Display", serif;
-    font-size: 72px;
-    margin: 0;
-    line-height: 1;
+  nav{
+    max-width:980px;
+    margin:0 auto;
+    padding:0 20px 40px;
+    font-size:13px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
   }
 
-  .hero p {
-    margin-top: 20px;
-    max-width: 420px;
-    line-height: 1.6;
-    opacity: 0.75;
+  nav a{
+    color:#111;
+    text-decoration:none;
+    border-bottom:1px solid #ddd;
   }
 
-  .hero-right {
-    background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
-    background-size: cover;
-    background-position: center;
+  .wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:0 20px 80px;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:50px;
   }
 
-  /* SECTION */
-  .section {
-    padding: 100px 60px;
-    max-width: 1100px;
+  h2{
+    font-size:14px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-top:40px;
+    margin-bottom:12px;
   }
 
-  .section h2 {
-    font-family: "DM Serif Display", serif;
-    font-size: 40px;
-    margin-bottom: 30px;
+  p{
+    margin:0 0 14px;
+    color:#222;
   }
 
-  /* FEATURE GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .side{
+    border-left:1px solid #eee;
+    padding-left:22px;
   }
 
-  .card {
-    background: white;
-    border: 1px solid rgba(0,0,0,0.08);
-    overflow: hidden;
+  .box{
+    margin-bottom:28px;
   }
 
-  .card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
+  .label{
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#777;
+    margin-bottom:6px;
   }
 
-  .card .pad {
-    padding: 16px;
+  ul{
+    margin:0;
+    padding-left:16px;
   }
 
-  .card h3 {
-    margin: 0;
-    font-size: 15px;
-  }
-
-  .card p {
-    font-size: 13px;
-    opacity: 0.7;
-    line-height: 1.5;
-  }
-
-  /* SPLIT QUOTE */
-  .quote {
-    font-family: "DM Serif Display", serif;
-    font-size: 34px;
-    line-height: 1.3;
-    max-width: 700px;
-  }
-
-  /* FOOT */
-  .foot {
-    padding: 60px;
-    font-size: 12px;
-    opacity: 0.5;
+  footer{
+    max-width:980px;
+    margin:0 auto;
+    padding:40px 20px;
+    border-top:1px solid #eee;
+    font-size:12px;
+    color:#777;
   }
 </style>
 </head>
 
 <body>
 
-<div class="top">
-  <div>Myles Russell</div>
-  <div>Data • Systems • Learning</div>
-</div>
-
-<div class="hero">
-  <div class="hero-left">
-    <h1>Turning life into data</h1>
-    <p>
-      I build systems that track, structure, and make sense of real life —
-      using Excel, SQL, Tableau, and Python as tools to understand patterns in behavior, health, and time.
-    </p>
+<header>
+  <h1>Myles Russell</h1>
+  <div class="sub">
+    I build systems out of real life — not theory.
+    Data analytics is just the language I’m using to understand behavior, structure time, and rebuild consistency.
   </div>
-  <div class="hero-right"></div>
-</div>
+</header>
 
-<div class="section">
-  <h2>Projects</h2>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#interests">Interests</a>
+  <a href="#learning">Learning</a>
+  <a href="#now">Now</a>
+</nav>
 
-  <div class="grid">
+<div class="wrap">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-      <div class="pad">
-        <h3>Excel Life OS</h3>
-        <p>A living system built in spreadsheets to track daily life patterns.</p>
-      </div>
+  <main>
+
+    <section id="about">
+      <h2>About</h2>
+
+      <p>
+        I’m not coming from a traditional tech background. I come from fixing things,
+        figuring things out, and learning by repetition instead of instruction.
+      </p>
+
+      <p>
+        Right now I’m focused on data analytics and automation — using tools like Excel,
+        SQL, Tableau, and Python to turn everyday life into structured information instead
+        of mental noise.
+      </p>
+
+      <p>
+        I don’t really separate “life” and “learning” anymore. I just try to make everything
+        I do measurable enough that I can improve it.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <p><b>Excel Life OS</b> — a personal operating system built in spreadsheets. It tracks habits, health signals, spending patterns, and daily structure in one place.</p>
+
+      <p><b>Reading & Knowledge System</b> — a structured database of books, ideas, and extracted lessons so information doesn’t disappear after I read it.</p>
+
+      <p><b>Personal Analytics Layer</b> — experiments in turning sleep, energy, focus, and routine into something visible instead of subjective.</p>
+    </section>
+
+    <section id="interests">
+      <h2>Interests</h2>
+
+      <p>
+        Pool is my main competitive hobby — it’s pattern recognition, patience, and control under pressure.
+      </p>
+
+      <p>
+        Guitar and writing are more expressive outlets — less about optimization, more about discipline and repetition over time.
+      </p>
+
+      <p>
+        I follow golf (Harvey Penick, Ben Hogan mindset), baseball (Oakland A’s), and football (Georgia).
+        I’ve also spent a lot of time around investing and the stock market — less trading hype, more structure and probability thinking.
+      </p>
+
+      <p>
+        Fitness matters because it’s the base layer. When that collapses, everything else gets harder to maintain.
+      </p>
+    </section>
+
+    <section id="learning">
+      <h2>Currently Learning</h2>
+
+      <p>
+        Excel, SQL, Tableau, Python, and AI automation workflows.
+      </p>
+
+      <p>
+        The goal isn’t certification. It’s fluency — being able to take messy input (life, data, behavior)
+        and turn it into something I can actually use.
+      </p>
+    </section>
+
+  </main>
+
+  <aside class="side">
+
+    <div class="box">
+      <div class="label">Focus</div>
+      <ul>
+        <li>Data analytics</li>
+        <li>Automation systems</li>
+        <li>Personal structure & recovery</li>
+      </ul>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
-      <div class="pad">
-        <h3>Book Database</h3>
-        <p>Structured reading system capturing insights, not just titles.</p>
-      </div>
+    <div class="box">
+      <div class="label">Sports</div>
+      <ul>
+        <li>Pool</li>
+        <li>Baseball (A’s)</li>
+        <li>Football (UGA)</li>
+        <li>Golf (studied, not casual)</li>
+      </ul>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
-      <div class="pad">
-        <h3>Personal Analytics</h3>
-        <p>Health, habits, and time turned into measurable patterns.</p>
-      </div>
+    <div class="box">
+      <div class="label">Creative output</div>
+      <ul>
+        <li>Writing</li>
+        <li>Guitar</li>
+      </ul>
     </div>
 
-  </div>
-</div>
+    <div class="box">
+      <div class="label">Now</div>
+      <p>
+        Rebuilding consistency through systems.
+        Learning data tools by applying them daily instead of studying them abstractly.
+      </p>
+    </div>
 
-<div class="section">
-  <h2>Philosophy</h2>
-  <div class="quote">
-    “If something repeats in my life, it becomes a system.  
-    If it becomes a system, it can be improved.”
-  </div>
-</div>
-
-<div class="section">
-  <h2>Now</h2>
-  <p style="max-width:600px; line-height:1.7; opacity:0.75;">
-    Learning data analytics through real usage, not tutorials.  
-    Building portfolio systems that reflect actual life data.  
-    Moving everything from memory → structure → insight.
-  </p>
-</div>
-
-<div class="foot">
-  mylesrussell.com — always evolving
-</div>
-
-</body>
-</html>
+    <div class="box">
+      <div class="label">Principle</div>
+      <p>
+        If something repeats, it becomes a system. If it becomes a system, it becomes improvable.
+      </p>
+    </div>
