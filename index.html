@@ -1,87 +1,146 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Myles Russell</title>
 
 <style>
-body{
-  margin:0;
-  background:#0b0c10;
-  color:#eaeaea;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f1115;
+    color: #e6e6e6;
+  }
 
-/* CENTER LAYOUT */
-.wrap{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:left;
-  padding:40px;
-}
+  header {
+    padding: 40px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+  }
 
-/* CONTENT BLOCK */
-.box{
-  max-width:700px;
-}
+  h1 {
+    margin: 0;
+    font-size: 42px;
+  }
 
-/* NAME */
-h1{
-  font-size:48px;
-  margin:0 0 10px;
-  letter-spacing:-1px;
-}
+  p {
+    color: #aaa;
+    margin-top: 10px;
+  }
 
-/* SUBTEXT */
-p{
-  font-size:18px;
-  opacity:.75;
-  line-height:1.6;
-  margin:0 0 20px;
-}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
 
-/* SMALL LINE */
-.small{
-  font-size:13px;
-  opacity:.4;
-  margin-top:30px;
-}
+  .card {
+    background: #161a22;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid #222;
+  }
 
-/* LINK STYLE */
-a{
-  color:#60a5fa;
-  text-decoration:none;
-}
-a:hover{
-  text-decoration:underline;
-}
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #3a82ff;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    display: none;
+    margin-top: 10px;
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .active .content {
+    display: block;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    font-size: 12px;
+  }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
-  <div class="box">
+<header>
+  <h1>Myles Russell</h1>
+  <p>Building systems from real life → data → insight</p>
+</header>
 
-    <h1>Myles Russell</h1>
+<div class="grid">
 
-    <p>
-      A personal site is coming soon.
-    </p>
-
-    <p>
-      Writing, programming, music, games, books, and whatever else ends up here.
-    </p>
-
-    <p class="small">
-      Currently under construction.
-    </p>
-
+  <div class="card" onclick="toggle(this)">
+    <div class="title">📊 Projects</div>
+    <div class="content">
+      Excel Life OS<br/>
+      Personal dashboards<br/>
+      SQL book database (coming)
+    </div>
   </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">🧠 Learning</div>
+    <div class="content">
+      Excel<br/>
+      SQL<br/>
+      Tableau<br/>
+      Python<br/>
+      GitHub
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">📚 Book Log</div>
+    <div class="content">
+      Tracking what I read and what I extract from it.<br/>
+      (Database coming soon)
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">⚙️ Systems</div>
+    <div class="content">
+      Turning life into structured data:<br/>
+      health, money, habits, work
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">📍 Now</div>
+    <div class="content">
+      Learning data tools.<br/>
+      Building portfolio projects.<br/>
+      Documenting everything in public.
+    </div>
+  </div>
+
 </div>
+
+<footer>
+  mylesrussell.com — always in progress
+</footer>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
