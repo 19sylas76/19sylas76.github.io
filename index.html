@@ -8,139 +8,169 @@
 <style>
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: #e6e6e6;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: #f6f3ee;
+    color: #111;
+    height: 100vh;
+    overflow: hidden;
   }
 
-  header {
-    padding: 40px;
-    text-align: center;
-    border-bottom: 1px solid #222;
+  /* left info rail */
+  .rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    padding: 40px 30px;
+    box-sizing: border-box;
   }
 
-  h1 {
-    margin: 0;
-    font-size: 42px;
-  }
-
-  p {
-    color: #aaa;
-    margin-top: 10px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 40px;
-  }
-
-  .card {
-    background: #161a22;
-    padding: 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.2s;
-    border: 1px solid #222;
-  }
-
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: #3a82ff;
-  }
-
-  .title {
-    font-size: 18px;
+  .name {
+    font-size: 28px;
+    font-weight: 600;
     margin-bottom: 10px;
   }
 
-  .content {
-    display: none;
-    margin-top: 10px;
-    color: #bbb;
-    font-size: 14px;
+  .subtitle {
+    font-size: 13px;
+    opacity: 0.7;
     line-height: 1.4;
   }
 
-  .active .content {
-    display: block;
+  .hint {
+    position: absolute;
+    bottom: 40px;
+    font-size: 12px;
+    opacity: 0.5;
   }
 
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #555;
+  /* main “space” */
+  .space {
+    margin-left: 280px;
+    height: 100vh;
+    position: relative;
+  }
+
+  /* objects in space */
+  .obj {
+    position: absolute;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 14px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 999px;
+    transition: transform 0.15s ease, background 0.15s ease;
+    background: rgba(255,255,255,0.6);
+  }
+
+  .obj:hover {
+    transform: scale(1.05);
+    background: #fff;
+  }
+
+  /* placement (intentionally asymmetrical like a “scene”) */
+  #projects { top: 20%; left: 20%; }
+  #learning { top: 35%; left: 55%; }
+  #books { top: 65%; left: 25%; }
+  #systems { top: 55%; left: 70%; }
+  #now { top: 25%; left: 75%; }
+
+  /* popup panel */
+  .panel {
+    position: fixed;
+    right: 40px;
+    top: 40px;
+    width: 320px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 20px;
+    display: none;
+  }
+
+  .panel h2 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+  }
+
+  .panel p {
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.8;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
     font-size: 12px;
+    opacity: 0.5;
   }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Myles Russell</h1>
-  <p>Building systems from real life → data → insight</p>
-</header>
-
-<div class="grid">
-
-  <div class="card" onclick="toggle(this)">
-    <div class="title">📊 Projects</div>
-    <div class="content">
-      Excel Life OS<br/>
-      Personal dashboards<br/>
-      SQL book database (coming)
-    </div>
+<div class="rail">
+  <div class="name">Myles Russell</div>
+  <div class="subtitle">
+    I turn real life into structured systems.<br/><br/>
+    Data analyst in progress.<br/>
+    Building my own operating system from scratch.
   </div>
 
-  <div class="card" onclick="toggle(this)">
-    <div class="title">🧠 Learning</div>
-    <div class="content">
-      Excel<br/>
-      SQL<br/>
-      Tableau<br/>
-      Python<br/>
-      GitHub
-    </div>
+  <div class="hint">
+    click objects in the space →
+  </div>
+</div>
+
+<div class="space">
+
+  <div class="obj" id="projects" onclick="openPanel('Projects',
+  'Excel Life OS, dashboards, automation ideas, and real systems built from daily life data.')">
+    projects
   </div>
 
-  <div class="card" onclick="toggle(this)">
-    <div class="title">📚 Book Log</div>
-    <div class="content">
-      Tracking what I read and what I extract from it.<br/>
-      (Database coming soon)
-    </div>
+  <div class="obj" id="learning" onclick="openPanel('Learning',
+  'Excel, SQL, Tableau, Python. Not certificates — applied daily use.')">
+    learning
   </div>
 
-  <div class="card" onclick="toggle(this)">
-    <div class="title">⚙️ Systems</div>
-    <div class="content">
-      Turning life into structured data:<br/>
-      health, money, habits, work
-    </div>
+  <div class="obj" id="books" onclick="openPanel('Books',
+  'A structured reading system. What I read, what it means, and how it connects.')">
+    books
   </div>
 
-  <div class="card" onclick="toggle(this)">
-    <div class="title">📍 Now</div>
-    <div class="content">
-      Learning data tools.<br/>
-      Building portfolio projects.<br/>
-      Documenting everything in public.
-    </div>
+  <div class="obj" id="systems" onclick="openPanel('Systems',
+  'Health tracking, finance tracking, habit loops, personal analytics.')">
+    systems
+  </div>
+
+  <div class="obj" id="now" onclick="openPanel('Now',
+  'Right now: building portfolio systems and learning data tools through real usage.')">
+    now
   </div>
 
 </div>
 
-<footer>
-  mylesrussell.com — always in progress
-</footer>
+<div class="panel" id="panel">
+  <div class="close" onclick="closePanel()">close</div>
+  <h2 id="title"></h2>
+  <p id="text"></p>
+</div>
 
 <script>
-  function toggle(el) {
-    el.classList.toggle("active");
-  }
+function openPanel(title, text) {
+  document.getElementById("panel").style.display = "block";
+  document.getElementById("title").innerText = title;
+  document.getElementById("text").innerText = text;
+}
+
+function closePanel() {
+  document.getElementById("panel").style.display = "none";
+}
 </script>
 
 </body>
-</html>
