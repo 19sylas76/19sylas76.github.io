@@ -5,106 +5,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Myles Russell</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
   body {
     margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background: #f6f3ee;
+    font-family: Inter, sans-serif;
+    background: #f2f0eb;
     color: #111;
-    height: 100vh;
+  }
+
+  /* TOP STRIP */
+  .top {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 40px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    height: 80vh;
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: 72px;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .hero p {
+    margin-top: 20px;
+    max-width: 420px;
+    line-height: 1.6;
+    opacity: 0.75;
+  }
+
+  .hero-right {
+    background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 100px 60px;
+    max-width: 1100px;
+  }
+
+  .section h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  /* FEATURE GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
     overflow: hidden;
   }
 
-  /* left info rail */
-  .rail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 100vh;
-    padding: 40px 30px;
-    box-sizing: border-box;
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
   }
 
-  .name {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 10px;
+  .card .pad {
+    padding: 16px;
   }
 
-  .subtitle {
+  .card h3 {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .card p {
     font-size: 13px;
     opacity: 0.7;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
-  .hint {
-    position: absolute;
-    bottom: 40px;
-    font-size: 12px;
-    opacity: 0.5;
+  /* SPLIT QUOTE */
+  .quote {
+    font-family: "DM Serif Display", serif;
+    font-size: 34px;
+    line-height: 1.3;
+    max-width: 700px;
   }
 
-  /* main “space” */
-  .space {
-    margin-left: 280px;
-    height: 100vh;
-    position: relative;
-  }
-
-  /* objects in space */
-  .obj {
-    position: absolute;
-    font-size: 14px;
-    cursor: pointer;
-    user-select: none;
-    padding: 10px 14px;
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 999px;
-    transition: transform 0.15s ease, background 0.15s ease;
-    background: rgba(255,255,255,0.6);
-  }
-
-  .obj:hover {
-    transform: scale(1.05);
-    background: #fff;
-  }
-
-  /* placement (intentionally asymmetrical like a “scene”) */
-  #projects { top: 20%; left: 20%; }
-  #learning { top: 35%; left: 55%; }
-  #books { top: 65%; left: 25%; }
-  #systems { top: 55%; left: 70%; }
-  #now { top: 25%; left: 75%; }
-
-  /* popup panel */
-  .panel {
-    position: fixed;
-    right: 40px;
-    top: 40px;
-    width: 320px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.1);
-    padding: 20px;
-    display: none;
-  }
-
-  .panel h2 {
-    margin: 0 0 10px 0;
-    font-size: 16px;
-  }
-
-  .panel p {
-    font-size: 13px;
-    line-height: 1.4;
-    opacity: 0.8;
-  }
-
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    cursor: pointer;
+  /* FOOT */
+  .foot {
+    padding: 60px;
     font-size: 12px;
     opacity: 0.5;
   }
@@ -113,64 +126,74 @@
 
 <body>
 
-<div class="rail">
-  <div class="name">Myles Russell</div>
-  <div class="subtitle">
-    I turn real life into structured systems.<br/><br/>
-    Data analyst in progress.<br/>
-    Building my own operating system from scratch.
-  </div>
+<div class="top">
+  <div>Myles Russell</div>
+  <div>Data • Systems • Learning</div>
+</div>
 
-  <div class="hint">
-    click objects in the space →
+<div class="hero">
+  <div class="hero-left">
+    <h1>Turning life into data</h1>
+    <p>
+      I build systems that track, structure, and make sense of real life —
+      using Excel, SQL, Tableau, and Python as tools to understand patterns in behavior, health, and time.
+    </p>
+  </div>
+  <div class="hero-right"></div>
+</div>
+
+<div class="section">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+      <div class="pad">
+        <h3>Excel Life OS</h3>
+        <p>A living system built in spreadsheets to track daily life patterns.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+      <div class="pad">
+        <h3>Book Database</h3>
+        <p>Structured reading system capturing insights, not just titles.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
+      <div class="pad">
+        <h3>Personal Analytics</h3>
+        <p>Health, habits, and time turned into measurable patterns.</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<div class="space">
-
-  <div class="obj" id="projects" onclick="openPanel('Projects',
-  'Excel Life OS, dashboards, automation ideas, and real systems built from daily life data.')">
-    projects
+<div class="section">
+  <h2>Philosophy</h2>
+  <div class="quote">
+    “If something repeats in my life, it becomes a system.  
+    If it becomes a system, it can be improved.”
   </div>
-
-  <div class="obj" id="learning" onclick="openPanel('Learning',
-  'Excel, SQL, Tableau, Python. Not certificates — applied daily use.')">
-    learning
-  </div>
-
-  <div class="obj" id="books" onclick="openPanel('Books',
-  'A structured reading system. What I read, what it means, and how it connects.')">
-    books
-  </div>
-
-  <div class="obj" id="systems" onclick="openPanel('Systems',
-  'Health tracking, finance tracking, habit loops, personal analytics.')">
-    systems
-  </div>
-
-  <div class="obj" id="now" onclick="openPanel('Now',
-  'Right now: building portfolio systems and learning data tools through real usage.')">
-    now
-  </div>
-
 </div>
 
-<div class="panel" id="panel">
-  <div class="close" onclick="closePanel()">close</div>
-  <h2 id="title"></h2>
-  <p id="text"></p>
+<div class="section">
+  <h2>Now</h2>
+  <p style="max-width:600px; line-height:1.7; opacity:0.75;">
+    Learning data analytics through real usage, not tutorials.  
+    Building portfolio systems that reflect actual life data.  
+    Moving everything from memory → structure → insight.
+  </p>
 </div>
 
-<script>
-function openPanel(title, text) {
-  document.getElementById("panel").style.display = "block";
-  document.getElementById("title").innerText = title;
-  document.getElementById("text").innerText = text;
-}
-
-function closePanel() {
-  document.getElementById("panel").style.display = "none";
-}
-</script>
+<div class="foot">
+  mylesrussell.com — always evolving
+</div>
 
 </body>
+</html>
