@@ -5,235 +5,196 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Myles Russell</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
   body{
     margin:0;
-    background:#f4f1ea;
+    font-family: Arial, sans-serif;
+    background:#fff;
     color:#111;
-    font-family: Inter, sans-serif;
   }
 
-  /* HERO */
-  .hero{
-    height:100vh;
-    display:grid;
-    grid-template-columns: 1.2fr 1fr;
+  .container{
+    max-width:1000px;
+    margin:0 auto;
+    padding:40px 20px;
   }
 
-  .hero-text{
-    padding:90px 70px;
+  /* TOP PROFILE */
+  .header{
     display:flex;
-    flex-direction:column;
-    justify-content:center;
+    gap:30px;
+    align-items:center;
+    margin-bottom:40px;
+  }
+
+  .pfp{
+    width:120px;
+    height:120px;
+    border-radius:12px;
+    background:#eee;
+    overflow:hidden;
+    flex-shrink:0;
+    border:1px solid #ddd;
+  }
+
+  .pfp img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
   }
 
   h1{
-    font-family: Fraunces, serif;
-    font-size:78px;
     margin:0;
-    line-height:1;
-    letter-spacing:-0.02em;
+    font-size:32px;
   }
 
-  .sub{
-    margin-top:22px;
-    max-width:480px;
-    font-size:16px;
-    line-height:1.6;
-    opacity:0.75;
+  .bio{
+    margin-top:8px;
+    color:#444;
+    line-height:1.5;
+    max-width:600px;
   }
 
-  .meta{
-    margin-top:30px;
-    font-size:12px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    opacity:0.5;
-  }
-
-  .hero-img{
-    background-image:url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
-    background-size:cover;
-    background-position:center;
-    filter:contrast(1.05) grayscale(0.1);
-  }
-
-  /* DIVIDER */
-  .divider{
-    height:1px;
-    background:rgba(0,0,0,0.08);
-    margin:0 70px;
-  }
-
-  /* SECTION */
+  /* SECTIONS */
   .section{
-    padding:90px 70px;
-    max-width:1100px;
+    margin-top:50px;
   }
 
-  .label{
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    opacity:0.5;
-    margin-bottom:20px;
+  .section h2{
+    font-size:18px;
+    margin-bottom:15px;
+    border-bottom:1px solid #eee;
+    padding-bottom:8px;
   }
 
-  .text{
-    font-family: Fraunces, serif;
-    font-size:34px;
-    line-height:1.25;
-    max-width:900px;
+  /* GRID */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:15px;
   }
 
-  .body{
-    margin-top:20px;
-    max-width:700px;
-    line-height:1.7;
-    opacity:0.8;
+  .card{
+    border:1px solid #eee;
+    padding:15px;
+    border-radius:8px;
   }
 
-  /* STORY BLOCKS */
-  .block{
-    margin-top:40px;
+  .card h3{
+    margin:0 0 8px;
+    font-size:16px;
   }
 
-  .block h3{
-    font-family: Fraunces, serif;
-    font-size:22px;
-    margin:0 0 10px 0;
-  }
-
-  .block p{
+  .card p{
     margin:0;
-    line-height:1.6;
-    opacity:0.75;
+    color:#555;
+    font-size:14px;
+    line-height:1.4;
   }
 
-  /* FOOT */
-  footer{
-    padding:60px 70px;
+  /* VIDEO */
+  .video{
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:8px;
+    overflow:hidden;
+  }
+
+  iframe{
+    width:100%;
+    height:100%;
+  }
+
+  /* BLOG LIST */
+  .post{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+  }
+
+  .post-title{
+    font-weight:bold;
+  }
+
+  .post-meta{
     font-size:12px;
-    opacity:0.5;
+    color:#777;
   }
 
-  @media(max-width:900px){
-    .hero{
-      grid-template-columns:1fr;
-    }
-    h1{
-      font-size:54px;
-    }
-    .hero-text{
-      padding:60px 30px;
-    }
-    .section{
-      padding:70px 30px;
-    }
-  }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<div class="container">
 
-  <div class="hero-text">
-    <h1>Myles Russell</h1>
+  <!-- PROFILE -->
+  <div class="header">
 
-    <div class="sub">
-      I build systems out of real life — tracking behavior, structure, health, learning, and performance through data.
-      What starts as chaos becomes something measurable.
+    <div class="pfp">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" />
     </div>
 
-    <div class="meta">
-      florida • building in public • data + systems + recovery
+    <div>
+      <h1>Myles Russell</h1>
+      <div class="bio">
+        Data analytics learner building practical systems from real life.
+        Interested in automation, fitness, sports, writing, and structured thinking.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2>Projects</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Excel Life OS</h3>
+        <p>Personal tracking system for habits, health, and daily structure.</p>
+      </div>
+
+      <div class="card">
+        <h3>Book Database</h3>
+        <p>System for tracking reading and extracting insights.</p>
+      </div>
+
+      <div class="card">
+        <h3>Analytics Practice</h3>
+        <p>SQL, Excel, Tableau projects built from real-life data.</p>
+      </div>
+
     </div>
   </div>
 
-  <div class="hero-img"></div>
+  <!-- BLOG -->
+  <div class="section">
+    <h2>Blog</h2>
 
-</div>
+    <div class="post">
+      <div class="post-title">Starting a personal data system</div>
+      <div class="post-meta">June 2026</div>
+    </div>
 
-<div class="divider"></div>
+    <div class="post">
+      <div class="post-title">What I learned tracking habits in Excel</div>
+      <div class="post-meta">June 2026</div>
+    </div>
 
-<div class="section">
+  </div>
 
-  <div class="label">Philosophy</div>
+  <!-- VIDEOS -->
+  <div class="section">
+    <h2>Videos</h2>
 
-  <div class="text">
-    If something repeats in life, it can be turned into a system.  
-    If it becomes a system, it can be understood.  
-    If it can be understood, it can be improved.
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
   </div>
 
 </div>
-
-<div class="divider"></div>
-
-<div class="section">
-
-  <div class="label">Work</div>
-
-  <div class="block">
-    <h3>Excel Life OS</h3>
-    <p>
-      A personal operating system built in spreadsheets to track habits, health signals, spending patterns, and daily structure.
-    </p>
-  </div>
-
-  <div class="block">
-    <h3>Reading & Knowledge System</h3>
-    <p>
-      A structured database for books, ideas, and extracted insights so learning compounds instead of disappearing.
-    </p>
-  </div>
-
-  <div class="block">
-    <h3>Personal Analytics Layer</h3>
-    <p>
-      Experiments in turning sleep, energy, focus, and routine into visible patterns instead of subjective memory.
-    </p>
-  </div>
-
-</div>
-
-<div class="divider"></div>
-
-<div class="section">
-
-  <div class="label">Life outside work</div>
-
-  <div class="body">
-    Pool is a focus-heavy game of control and pattern recognition.  
-    Guitar and writing are slower, expressive systems that reward repetition over time.  
-    I follow baseball (A’s), football (UGA), and golf (especially the discipline-focused mindset of players like Hogan and Penick).  
-    Fitness is the baseline layer — when that breaks, everything else becomes harder to maintain.  
-    I also spend time studying markets and investing as structured probability, not speculation.
-  </div>
-
-</div>
-
-<div class="divider"></div>
-
-<div class="section">
-
-  <div class="label">Now</div>
-
-  <div class="body">
-    Currently focused on learning data analytics and automation tools — Excel, SQL, Tableau, Python — by applying them directly to real life systems instead of abstract exercises.
-    Building consistency first. Everything else follows from that.
-  </div>
-
-</div>
-
-<footer>
-  mylesrussell.com — a system in progress
-</footer>
 
 </body>
 </html>
