@@ -5,233 +5,235 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Myles Russell</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
   body{
     margin:0;
-    font-family: system-ui, Arial, sans-serif;
-    background:#fff;
+    background:#f4f1ea;
     color:#111;
-    line-height:1.55;
+    font-family: Inter, sans-serif;
   }
 
-  header{
-    max-width:980px;
-    margin:0 auto;
-    padding:70px 20px 30px;
+  /* HERO */
+  .hero{
+    height:100vh;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .hero-text{
+    padding:90px 70px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
   }
 
   h1{
-    font-size:44px;
+    font-family: Fraunces, serif;
+    font-size:78px;
     margin:0;
+    line-height:1;
     letter-spacing:-0.02em;
   }
 
   .sub{
-    margin-top:10px;
-    color:#444;
-    max-width:700px;
+    margin-top:22px;
+    max-width:480px;
     font-size:16px;
+    line-height:1.6;
+    opacity:0.75;
   }
 
-  nav{
-    max-width:980px;
-    margin:0 auto;
-    padding:0 20px 40px;
-    font-size:13px;
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-  }
-
-  nav a{
-    color:#111;
-    text-decoration:none;
-    border-bottom:1px solid #ddd;
-  }
-
-  .wrap{
-    max-width:980px;
-    margin:0 auto;
-    padding:0 20px 80px;
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    gap:50px;
-  }
-
-  h2{
-    font-size:14px;
-    letter-spacing:.12em;
+  .meta{
+    margin-top:30px;
+    font-size:12px;
+    letter-spacing:0.12em;
     text-transform:uppercase;
-    margin-top:40px;
-    margin-bottom:12px;
+    opacity:0.5;
   }
 
-  p{
-    margin:0 0 14px;
-    color:#222;
+  .hero-img{
+    background-image:url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
+    background-size:cover;
+    background-position:center;
+    filter:contrast(1.05) grayscale(0.1);
   }
 
-  .side{
-    border-left:1px solid #eee;
-    padding-left:22px;
+  /* DIVIDER */
+  .divider{
+    height:1px;
+    background:rgba(0,0,0,0.08);
+    margin:0 70px;
   }
 
-  .box{
-    margin-bottom:28px;
+  /* SECTION */
+  .section{
+    padding:90px 70px;
+    max-width:1100px;
   }
 
   .label{
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:#777;
-    margin-bottom:6px;
-  }
-
-  ul{
-    margin:0;
-    padding-left:16px;
-  }
-
-  footer{
-    max-width:980px;
-    margin:0 auto;
-    padding:40px 20px;
-    border-top:1px solid #eee;
     font-size:12px;
-    color:#777;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    opacity:0.5;
+    margin-bottom:20px;
+  }
+
+  .text{
+    font-family: Fraunces, serif;
+    font-size:34px;
+    line-height:1.25;
+    max-width:900px;
+  }
+
+  .body{
+    margin-top:20px;
+    max-width:700px;
+    line-height:1.7;
+    opacity:0.8;
+  }
+
+  /* STORY BLOCKS */
+  .block{
+    margin-top:40px;
+  }
+
+  .block h3{
+    font-family: Fraunces, serif;
+    font-size:22px;
+    margin:0 0 10px 0;
+  }
+
+  .block p{
+    margin:0;
+    line-height:1.6;
+    opacity:0.75;
+  }
+
+  /* FOOT */
+  footer{
+    padding:60px 70px;
+    font-size:12px;
+    opacity:0.5;
+  }
+
+  @media(max-width:900px){
+    .hero{
+      grid-template-columns:1fr;
+    }
+    h1{
+      font-size:54px;
+    }
+    .hero-text{
+      padding:60px 30px;
+    }
+    .section{
+      padding:70px 30px;
+    }
   }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Myles Russell</h1>
-  <div class="sub">
-    I build systems out of real life — not theory.
-    Data analytics is just the language I’m using to understand behavior, structure time, and rebuild consistency.
+<div class="hero">
+
+  <div class="hero-text">
+    <h1>Myles Russell</h1>
+
+    <div class="sub">
+      I build systems out of real life — tracking behavior, structure, health, learning, and performance through data.
+      What starts as chaos becomes something measurable.
+    </div>
+
+    <div class="meta">
+      florida • building in public • data + systems + recovery
+    </div>
   </div>
-</header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#interests">Interests</a>
-  <a href="#learning">Learning</a>
-  <a href="#now">Now</a>
-</nav>
+  <div class="hero-img"></div>
 
-<div class="wrap">
+</div>
 
-  <main>
+<div class="divider"></div>
 
-    <section id="about">
-      <h2>About</h2>
+<div class="section">
 
-      <p>
-        I’m not coming from a traditional tech background. I come from fixing things,
-        figuring things out, and learning by repetition instead of instruction.
-      </p>
+  <div class="label">Philosophy</div>
 
-      <p>
-        Right now I’m focused on data analytics and automation — using tools like Excel,
-        SQL, Tableau, and Python to turn everyday life into structured information instead
-        of mental noise.
-      </p>
+  <div class="text">
+    If something repeats in life, it can be turned into a system.  
+    If it becomes a system, it can be understood.  
+    If it can be understood, it can be improved.
+  </div>
 
-      <p>
-        I don’t really separate “life” and “learning” anymore. I just try to make everything
-        I do measurable enough that I can improve it.
-      </p>
-    </section>
+</div>
 
-    <section id="projects">
-      <h2>Projects</h2>
+<div class="divider"></div>
 
-      <p><b>Excel Life OS</b> — a personal operating system built in spreadsheets. It tracks habits, health signals, spending patterns, and daily structure in one place.</p>
+<div class="section">
 
-      <p><b>Reading & Knowledge System</b> — a structured database of books, ideas, and extracted lessons so information doesn’t disappear after I read it.</p>
+  <div class="label">Work</div>
 
-      <p><b>Personal Analytics Layer</b> — experiments in turning sleep, energy, focus, and routine into something visible instead of subjective.</p>
-    </section>
+  <div class="block">
+    <h3>Excel Life OS</h3>
+    <p>
+      A personal operating system built in spreadsheets to track habits, health signals, spending patterns, and daily structure.
+    </p>
+  </div>
 
-    <section id="interests">
-      <h2>Interests</h2>
+  <div class="block">
+    <h3>Reading & Knowledge System</h3>
+    <p>
+      A structured database for books, ideas, and extracted insights so learning compounds instead of disappearing.
+    </p>
+  </div>
 
-      <p>
-        Pool is my main competitive hobby — it’s pattern recognition, patience, and control under pressure.
-      </p>
+  <div class="block">
+    <h3>Personal Analytics Layer</h3>
+    <p>
+      Experiments in turning sleep, energy, focus, and routine into visible patterns instead of subjective memory.
+    </p>
+  </div>
 
-      <p>
-        Guitar and writing are more expressive outlets — less about optimization, more about discipline and repetition over time.
-      </p>
+</div>
 
-      <p>
-        I follow golf (Harvey Penick, Ben Hogan mindset), baseball (Oakland A’s), and football (Georgia).
-        I’ve also spent a lot of time around investing and the stock market — less trading hype, more structure and probability thinking.
-      </p>
+<div class="divider"></div>
 
-      <p>
-        Fitness matters because it’s the base layer. When that collapses, everything else gets harder to maintain.
-      </p>
-    </section>
+<div class="section">
 
-    <section id="learning">
-      <h2>Currently Learning</h2>
+  <div class="label">Life outside work</div>
 
-      <p>
-        Excel, SQL, Tableau, Python, and AI automation workflows.
-      </p>
+  <div class="body">
+    Pool is a focus-heavy game of control and pattern recognition.  
+    Guitar and writing are slower, expressive systems that reward repetition over time.  
+    I follow baseball (A’s), football (UGA), and golf (especially the discipline-focused mindset of players like Hogan and Penick).  
+    Fitness is the baseline layer — when that breaks, everything else becomes harder to maintain.  
+    I also spend time studying markets and investing as structured probability, not speculation.
+  </div>
 
-      <p>
-        The goal isn’t certification. It’s fluency — being able to take messy input (life, data, behavior)
-        and turn it into something I can actually use.
-      </p>
-    </section>
+</div>
 
-  </main>
+<div class="divider"></div>
 
-  <aside class="side">
+<div class="section">
 
-    <div class="box">
-      <div class="label">Focus</div>
-      <ul>
-        <li>Data analytics</li>
-        <li>Automation systems</li>
-        <li>Personal structure & recovery</li>
-      </ul>
-    </div>
+  <div class="label">Now</div>
 
-    <div class="box">
-      <div class="label">Sports</div>
-      <ul>
-        <li>Pool</li>
-        <li>Baseball (A’s)</li>
-        <li>Football (UGA)</li>
-        <li>Golf (studied, not casual)</li>
-      </ul>
-    </div>
+  <div class="body">
+    Currently focused on learning data analytics and automation tools — Excel, SQL, Tableau, Python — by applying them directly to real life systems instead of abstract exercises.
+    Building consistency first. Everything else follows from that.
+  </div>
 
-    <div class="box">
-      <div class="label">Creative output</div>
-      <ul>
-        <li>Writing</li>
-        <li>Guitar</li>
-      </ul>
-    </div>
+</div>
 
-    <div class="box">
-      <div class="label">Now</div>
-      <p>
-        Rebuilding consistency through systems.
-        Learning data tools by applying them daily instead of studying them abstractly.
-      </p>
-    </div>
+<footer>
+  mylesrussell.com — a system in progress
+</footer>
 
-    <div class="box">
-      <div class="label">Principle</div>
-      <p>
-        If something repeats, it becomes a system. If it becomes a system, it becomes improvable.
-      </p>
-    </div>
+</body>
+</html>
