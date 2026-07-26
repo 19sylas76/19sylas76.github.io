@@ -4,463 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WordVault - Type it once. Never type it again.</title>
-    <style>
-        /* --- DESIGN SYSTEM & BRAND COLORS --- */
-        :root {
-            --bg-dark: #0a192f;
-            --bg-card: #123B66;
-            --border-cyan: #00D9FF;
-            --text-white: #ffffff;
-            --text-muted: #8892b0;
-            --accent-green: #008F5F;
-            --accent-green-hover: #00FFB7;
-            --btn-blue: #005F8F;
-            --btn-blue-hover: #00D9FF;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f8fafc;
-            color: #334155;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- NAVIGATION BAR --- */
-        header {
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 20px;
-            color: var(--bg-dark);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #64748b;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover {
-            color: var(--btn-blue-hover);
-        }
-
-        .btn-nav-download {
-            background-color: var(--bg-dark);
-            color: white !important;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px !important;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            background: linear-gradient(180deg, #f1f5f9 0%, #ffffff 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #e2e8f0;
-            color: var(--btn-blue);
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--bg-dark);
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 span {
-            color: var(--btn-blue);
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .btn-primary {
-            background-color: var(--btn-blue);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            border: 1px solid var(--border-cyan);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--btn-blue-hover);
-            color: #0a192f;
-        }
-
-        .btn-secondary {
-            background-color: white;
-            color: #334155;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            border: 1px solid #cbd5e1;
-        }
-
-        .hero-meta {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-bottom: 50px;
-        }
-
-        .hero-image-container img {
-            width: 100%;
-            max-width: 850px;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-        }
-
-        /* --- VALUE PROPOSITION GRID --- */
-        .section-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--bg-dark);
-            margin: 80px 0 50px 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
-            margin-bottom: 80px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 24px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .feature-icon {
-            font-size: 24px;
-            margin-bottom: 12px;
-        }
-
-        .feature-card h3 {
-            font-size: 15px;
-            color: var(--bg-dark);
-            margin-bottom: 8px;
-        }
-
-        .feature-card p {
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .tag-soon {
-            background: #fee2e2;
-            color: #ef4444;
-            font-size: 9px;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-
-        /* --- HOW IT WORKS SPLIT LAYOUT --- */
-        .how-it-works {
-            background: #f1f5f9;
-            padding: 80px 0;
-        }
-
-        .split-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .steps-list {
-            list-style: none;
-        }
-
-        .step-item {
-            margin-bottom: 30px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .step-number {
-            background: var(--btn-blue);
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .step-text h3 {
-            font-size: 18px;
-            color: var(--bg-dark);
-            margin-bottom: 4px;
-        }
-
-        .step-text p {
-            font-size: 14px;
-            color: #64748b;
-        }
-
-        .images-showcase {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .img-manager {
-            width: 60%;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-
-        .img-dropdown {
-            width: 35%;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-
-        /* --- AUDIENCE & SECURITY GRID --- */
-        .double-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            padding: 80px 0;
-        }
-
-        .audience-pane h2, .security-pane h2 {
-            font-size: 24px;
-            color: var(--bg-dark);
-            margin-bottom: 12px;
-        }
-
-        .audience-pane p, .security-pane p {
-            font-size: 14px;
-            color: #64748b;
-            margin-bottom: 30px;
-        }
-
-        .audience-subgrid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .audience-item h4 {
-            font-size: 14px;
-            color: var(--bg-dark);
-            margin-bottom: 4px;
-        }
-
-        .audience-item p {
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .security-box {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 30px;
-        }
-
-        .security-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .security-list li {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #334155;
-        }
-
-        /* --- CLOSING CTA BANNER --- */
-        .cta-banner {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            border-radius: 12px;
-            margin-bottom: 80px;
-        }
-
-        .cta-banner h2 {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .cta-banner p {
-            color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 60px 0 30px 0;
-            font-size: 13px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 16px;
-            font-size: 14px;
-        }
-
-        .footer-col p {
-            line-height: 1.8;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-col ul a {
-            color: #94a3b8;
-            text-decoration: none;
-        }
-
-        .footer-col ul a:hover {
-            color: white;
-        }
-
-        .copyright {
-            text-align: center;
-            font-size: 11px;
-
-color: #64748b;
-}
-/* --- RESPONSIVE MOBILE SCALING --- */
-@media (max-width: 768px) {
-.hero h1 { font-size: 32px; }
-.split-layout, .double-grid { grid-template-columns: 1fr; gap: 30px; }
-.audience-subgrid { grid-template-columns: 1fr; }
-.images-showcase { flex-direction: column; }
-.img-manager, .img-dropdown { width: 100%; }
-.nav-links li:not(:last-child) { display: none; }
-}
-
-
-MYLES RUSSELL
-Python Developer & Software Creator.
-Building practical software tools that make work faster.
-
-
-PROJECTS
-
-WordVault App
-Pong (Python Build)
-Analytics Portfolio Portfolio
-
-
-
-CONNECT
-
-GitHub Profile
-YouTube Channel
-Facebook Project Log
-
-
-
-CONTACT
-✉ mylesrussell.dev@gmail.com
-
-
-
-© 2026 Myles Russell. All rights reserved. Built with PySide6 & PyInstaller framework.
-
-
-### Next Steps to Publish It:
-1. Save this block as `index.html` inside your GitHub repository folder.
-2. Put your software screenshots (`hero-laptop.png`, `manager-screenshot.png`, `dropdown-screenshot.png`) into the same directory so the image links resolve cleanly.
-3. Push your code updates to GitHub.
-4. Go to your repository settings on GitHub, select **Pages** from the sidebar, set the source branch to `main`, and hit save. 
-
-Your beautiful landing site will be live and ready for your friends to check out and download within minutes!
-
-
+    <!-- Links your external styles sheets framework cleanly -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP NAVIGATION CONTAINER -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">WordVault</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">WordVault</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#download" class="btn-nav-download">Download Beta</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO DISPLAY BANNER -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge">Introducing</span>
+            <h1>WordVault<br>Type it once. Never type it again.</h1>
+            <p class="tagline">The simple, secure way to store and instantly access the text, code, prompts, and information you use every day.</p>
+            <div class="hero-buttons">
+                <a href="WordVault_v1.0.zip" class="btn-primary" id="download">Download Beta</a>
+                <a href="#" class="btn-secondary">Watch Demo</a>
+            </div>
+            <div class="hero-meta">🛡 Private. Encrypted. Yours.</div>
+            <div class="hero-image-frame">
+                <img src="https://placehold.co" alt="WordVault App Context Overview">
+            </div>
+        </div>
+    </section>
+
+    <!-- APP STRIP -->
+    <div class="compatibility-strip">
+        Works in any application.
+    </div>
+
+    <!-- CORE CHANNELS GRID -->
+    <section class="container">
+        <h2 class="section-header">Your words, code, and ideas. One click away.</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-box ic-blue">⚡</div>
+                <h3>Instant Access</h3>
+                <p>Open the widget, click, and insert anywhere you work.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-box ic-purple">📁</div>
+                <h3>Organized Libraries</h3>
+                <p>Create unlimited libraries and keep everything in its place.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-box ic-orange">💻</div>
+                <h3>More Than Text</h3>
+                <p>Store text, code, prompts, templates, images, and more.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-box ic-navy">🔒</div>
+                <h3>Private & Secure</h3>
+                <p>Password protect your vault. Your data stays on your device.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-box ic-cyan">✨</div>
+                <h3>AI Library Builder<span class="badge-soon">Soon</span></h3>
+                <p>Describe what you need. Let WordVault build the foundation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS CORE MODULES -->
+    <section class="showcase-block">
+        <div class="container showcase-grid">
+            <div class="mock-display-group">
+                <img src="https://placehold.co" alt="Manager Panel View" class="mock-pane-left">
+                <img src="https://placehold.co" alt="Dropdown Selector Layout" class="mock-pane-right">
+            </div>
+            <div class="steps-container">
+                <h2>How it works</h2>
+                <ul class="steps-wrapper">
+                    <li class="step-row">
+                        <div class="step-bullet">1</div>
+                        <div class="step-content">
+                            <h3>Create</h3>
+                            <p>Add text, code, prompts, or any content you use frequently.</p>
+                        </div>
+                    </li>
+                    <li class="step-row">
+                        <div class="step-bullet">2</div>
+                        <div class="step-content">
+                            <h3>Organize</h3>
+                            <p>Place it in libraries that make sense for you.</p>
+                        </div>
+                    </li>
+                    <li class="step-row">
+                        <div class="step-bullet">3</div>
+                        <div class="step-content">
+                            <h3>Access Anywhere</h3>
+                            <p>Open the widget, search, click, and insert instantly.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET AUDIENCES MATRIX -->
+    <section class="container info-block">
+        <div class="info-grid">
+            <div class="pane-audience">
+                <h2 class="pane-heading">Built for everyone.<br>Useful for anything.</h2>
+                <p class="pane-sub">From everyday tasks to professional workflows, WordVault adapts to you.</p>
+                <div class="audience-matrix">
+                    <div class="matrix-cell">
+                        <h4>Developers</h4>
+                        <p>Store code snippets, post ideas, assets, and inspiration notes.</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <h4>Writers</h4>
+                        <p>Save templates, ideas, and content you reuse.</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <h4>Creators</h4>
+                        <p>Keep prompts, post ideas, assets, and inspiration.</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <h4>Professionals</h4>
+                        <p>Email responses, reports, templates, and more.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pane-security">
+                <div class="security-card">
+                    <h2 class="pane-heading">Your data stays yours.</h2>
+                    <p class="pane-sub">Everything in your vault is encrypted. Even if someone accesses the files, they'll see nothing but gibberish.</p>
+                    <ul class="security-rows">
+                        <li><span>✓</span> Password protected</li>
+                        <li><span>✓</span> Local encryption</li>
+                        <li><span>✓</span> No cloud required</li>
+                        <li><span>✓</span> You're always in control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEM CTA PANEL -->
+    <section class="container">
+        <div class="bottom-cta">
+            <h2>Ready to build your vault?</h2>
+            <p>Join the beta and start saving time today.</p>
+            <a href="WordVault_v1.0.zip" class="btn-bottom">Download WordVault Beta</a>
+        </div>
+    </section>
+
+    <!-- FOOTER MATRIX MAP -->
+    <footer>
+        <div class="container footer-matrix">
+            <div class="footer-node">
+                <h4>Myles Russell</h4>
+                <p>Python Developer · Software Creator<br>Building practical software tools that make work faster.</p>
+            </div>
+            <div class="footer-node">
+                <h4>Projects</h4>
+                <ul>
+                    <li><a href="#">WordVault</a></li>
+                    <li><a href="#">Pong (Python)</a></li>
+                    <li><a href="#">Analytics Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-node">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="footer-node">
+                <h4>Contact</h4>
+                <p>✉ mylesrussell.dev@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom-text">
+            © 2026 Myles Russell. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
