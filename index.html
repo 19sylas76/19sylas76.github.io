@@ -3,65 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordVault | Download Beta</title>
-    <style>
-        /* Reset and clean up all default page gaps */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body, html {
-            width: 100%;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Container that scales perfectly on any browser window */
-        .mockup-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px; /* Limits scaling so the text stays perfectly readable */
-        }
-
-        .mockup-image {
-            display: block;
-            width: 100%;
-            height: auto;
-            user-select: none;
-        }
-
-        /* The precise clickable box mapped directly over the big blue hero button */
-        .download-hotspot {
-            position: absolute;
-            top: 25.1%;
-            left: 3.9%;
-            width: 11.2%;
-            height: 2.8%;
-            
-            background: rgba(0, 0, 0, 0); /* Invisible */
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* Subtle indicator so your friends know it is a real button when hovered */
-        .download-hotspot:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-    </style>
+    <title>WordVault | Type it once. Never type it again.</title>
+    <!-- Link to your clean, external CSS rules stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="mockup-container">
-        <!-- Safely pulls your crisp, flat image asset directly from your GitHub directory -->
-        <img src="mockup.png" alt="WordVault Product Presentation Layout" class="mockup-image">
+    <div class="page-wrapper">
 
-        <!-- THE 1 WORKING DOWNLOAD LINK -->
-        <!-- Replace the '#' sign below with your real Wormhole, GoFile, or Drive link -->
-        <a href="#" class="download-hotspot" title="Download WordVault Beta"></a>
-    </div>
+        <!-- CONTAINER 1: Right-Justified Navigation Header Bar -->
+        <div class="full-width-row">
+            <header class="navbar-main">
+                
+                
+                <div class="brand-logo">
+                    <span class="navy">Word</span><span class="cyan">Vault</span>
+                </div>
+                
+                <!-- Nav Action Panel Stack Group -->
+                <div class="nav-right-panel">
+                    <nav class="nav-links">
+                        <a href="#" class="active">Home</a>
+                        <a href="#" class="inactive">WordVault</a>
+                        <a href="#" class="inactive">Projects</a>
+                        <a href="#" class="inactive">About</a>
+                        <a href="#" class="inactive">Contact</a>
+                    </nav>
+                    <div>
+                        <a href="#" class="btn-top-download">Download Beta</a>
+                    </div>
+                </div>
+                
+            </header>
+        </div>
+
+        <!-- SPLIT ROW 1: Hero Core Presentation Section -->
+        <div class="split-row">
+            
+            <!-- CONTAINER 2: Left Side Brand Copy & Interactive Callouts -->
+            <section class="hero-left-col">
+                <span class="hero-pre-tag">Introducing</span>
+                <h1 class="hero-main-title">
+                    Word<span class="cyan">Vault</span>
+                </h1>
+                <p class="hero-tagline">
+                    Type it once.<br>Never type it again.
+                </p>
+                <p class="hero-description">
+                    The simple, secure way to store and instantly access the text, code, prompts, and information you use every day.
+                </p>
+                
+                <!-- Action Handles -->
+                <div class="hero-button-row">
+                    <!-- Primary Blue Download Button -->
+                    <a href="#" class="btn-primary-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16v1a3 3 0 003 3h12a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        <span>Download Beta</span>
+                    </a>
+
+                    <!-- Outline Watch Demo Button -->
+                    <a href="#" class="btn-outline-gray">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 14px; height: 14px;">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Watch Demo</span>
+                    </a>
+                </div>
+
+                <!-- Protective Trust Metadata Sub-Line -->
+                <div class="hero-trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <span>safe, secure, yours</span>
+                </div>
+            </section>
+
+            <!-- CONTAINER 3: Right Side Laptop App Preview Framework Box -->
+            <div class="hero-right-col">
+                <div class="word-canvas">
+                    
+                    <!-- Microsoft Word Ribbon UI Header Bar -->
+                    <div class="word-ribbon">
+                        <div class="ribbon-top-row">
+                            <span>File</span>
+                            <span class="ribbon-tab-active">Home</span>
+                            <span>Insert</span>
+                            <span>Design</span>
+                            <span>Layout</span>
+                        </div>
+                        <div class="ribbon-bottom-row">
+                            <div class="ribbon-tool-pill" style="width: 45px;"></div>
+                            <div class="ribbon-tool-pill" style="width: 80px;"></div>
+                            <div class="ribbon-tool-pill" style="width: 60px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Main Document Background Workspace Area -->
+                    <div class="document-workspace">
+                        <div class="document-page">
+                            
+                            <!-- Static Text Document Guidelines Layout -->
+                            <p style="margin-bottom: 8px; font-weight: bold; font-size: 11px;">Customer Care Template Logs</p>
+                            <p style="color: #94a3b8; text-decoration: line-through; margin-bottom: 12px;">[Insert system response here]</p>
+                            <p style="color: #64748b;">With WordVault, you can respond faster while maintaining accuracy and consistency across every customer interaction. Instead of retyping long responses or searching through old emails, simply select your message and expand it instantly.</p>
+                            
+                            <!-- INTERACTIVE FLOATING WORDVAULT COMPONENT OVERLAY -->
+                            <div class="wv-overlay-anchor">
+                                <!-- The Mini App Control Box Widget -->
+                                <div class="wv-mini-widget">
+                                    <div class="wv-widget-header">
+                                        <span>WordVault</span>
+                                        <span style="color: #ef4444; cursor: pointer;">×</span>
+                                    </div>
+                                    <div class="wv-widget-buttons">
+                                        <div class="wv-square-icon-btn">⚙</div>
+                                        <div class="wv-square-icon-btn active">▼</div>
+                                    </div>
+                                </div>
+
+                                <!-- Cascading Dropdown Selection Menu Array -->
+                                <div class="wv-menu-cascade">
+                                    <!-- Primary Folder Catalog Column Layout -->
+                                    <div class="wv-dropdown-menu">
+                                        <div class="wv-menu-item">
+                                            <span style="display: flex; align-items: center;"><span class="wv-folder-icon">📁</span>code snippets</span>
+                                            <span>&gt;</span>
+                                        </div>
+                                        <div class="wv-menu-item selected">
+                                            <span style="display: flex; align-items: center;"><span class="wv-folder-icon" style="color: #0a192f;">📁</span>Customer Service</span>
+                                            <span>&gt;</span>
+                                        </div>
+                                        <div class="wv-menu-item">
+                                            <span style="display: flex; align-items: center;"><span class="wv-folder-icon">📁</span>form fills</span>
+                                            <span>&gt;</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Expanded Active Text Snippet Preview Bubble -->
+                                    <div class="wv-preview-box">
+                                        I'm very sorry to hear that. This is not the experience we want for you. Let me review your account and see what I can do to resolve this for you.
+                                    </div>
+                                </div>
+                            </div> <!-- End Interaction Overlay Anchor -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER 4: Full-Width Headline Core & 5-Column Feature Panel -->
+        <div class="full-width-row">
+            <div class="features-banner">
+                
+                <div class="features-headline">
+                    <h2>Your words, code, and ideas. One click away.</h2>
+                </div>
+
+                <div class="features-grid-row">
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3>Instant Access</h3>
+                        <p>Open the widget, click, and insert anywhere you work instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                        </div>
+                        <h3>Organized Libraries</h3>
+                        <p>Create unlimited libraries and keep everything structured.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+                        </div>
+                        <h3>More Than Text</h3>
+                        <p>Store raw text data, code metrics, dynamic strings, and templates.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <h3>Private & Secure</h3>
+                        <p>Password protect your data. Your database remains entirely local.</p>
+                    </div>
+                    
+                    <div class="feature-card-ai">
+                        <div class="badge-coming-soon">Coming Soon</div>
+                        <div class="feature-icon-box-ai">
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <h3>AI Library Builder</h3>
+                        <p>Describe what you need. Let WordVault build configurations instantly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SPLIT ROW 2: Empty Grid Slots Reserved for Dashboard Screenshots Layout Track -->
+        <!-- CONTAINER 5 & CONTAINER 6 (Add your dashboard setup components when available) -->
+        <div class="split-row">
+            <div class="wireframe-box col-7" style="height: 300px;">Container 5: Left Side Catalog Dashboard Split</div>
+            <div class="wireframe-box col-5" style="height: 300px;">Container 6: Right Side Flow Process Split</div>
+        </div>
+
+        <!-- CONTAINER 7: Full-Width Segment (Audience Split Left + Security Card Right) -->
+        <div class="full-width-row">
+            <div class="c7-flex-container">
+                
+                <!-- Left Side: Use-Case Targeting Text Matrix -->
+                <div class="audience-block-left">
+                    <h2>Built for everyone.</h2>
+                    <h2>Useful for anything.</h2>
+                    <p class="desc">From everyday tasks to professional workflows,<br>WordVault adapts to you.</p>
+                    
+                    <div class="audience-profiles-row">
+                        <div class="profile-sub-card">
+                            <span class="emoji">&lt;/&gt;</span>
+                            <h5>Developers</h5>
+                            <p>Store code snippets, queries, and debugging notes.</p>
+                        </div>
+                        <div class="profile-sub-card">
+                            <span class="emoji">✍️</span>
+                            <h5>Writers</h5>
+                            <p>Save templates, ideas, and content you reuse.</p>
+                        </div>
+                        <div class="profile-sub-card">
+                            <span class="emoji">🎨</span>
+                            <h5>Creators</h5>
+                            <p>Keep prompts, post ideas, assets, and inspiration.</p>
+                        </div>
+                        <div class="profile-sub-card">
+                            <span class="emoji">💼</span>
+                            <h5>Professionals</h5>
+                            <p>Email responses, reports, templates, and more.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Light Shield Security Environment Card -->
+                <div class="security-card-right">
+                    <div class="security-card-main">
+                        <div class="security-card-header">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px; color: #10b981; fill: rgba(16,185,129,0.1);">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            <h4>Your data stays yours.</h4>
+                        </div>
+                        <p class="desc">Everything in your vault is encrypted. Even if someone accesses the files, they'll see nothing but gibberish.</p>
+                        
+                        <div class="security-check-grid">
+                            <div class="check-item"><span class="green-check">✓</span> Password protected</div>
+                            <div class="check-item"><span class="green-check">✓</span> Local encryption</div>
+                            <div class="check-item"><span class="green-check">✓</span> No cloud required</div>
+                            <div class="check-item"><span class="green-check">✓</span> You're always in control</div>
+                        </div>
+                    </div>
+                    <div class="padlock-wrapper">
+                        <div class="padlock-ring">🔒</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CONTAINER 8: Sleek Full-Width Action Banner Panel Matrix Callout -->
+        <div class="full-width-row">
+            <div class="cta-banner-wrapper">
+                
+                <div class="cta-banner-left">
+                    <div class="wv-logo-box">WV</div>
+                    <div class="text-stack">
+                        <h2>Ready to build your vault?</h2>
+                        <p>Join the beta and start saving time today.</p>
+                    </div>
+                </div>
+
+                <div class="cta-banner-right">
+                    <!-- THE WORKING DOWNLOAD LINK -->
+                    <!-- Replace the '#' sign below with your real share link -->
+                    <a href="#" class="btn-main-download">Download WordVault Beta</a>
+                    <span class="sys-requirement-text">Windows 10 / 11 (64-bit Systems)</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CONTAINER 9: Full-Width 4-Column Global Architecture Platform System Footer -->
+        <div class="full-width-row" style="margin-bottom: 0;">
+            <footer class="footer-main">
+                
+                <div class="footer-columns-row">
+                    <div class="footer-col-1">
+                        <h5>MYLES RUSSELL</h5>
+                        <p class="title">Python Developer · Software Creator</p>
+                        <p class="tagline">Building practical software tools that make work faster.</p>
+                    </div>
+                    <div class="footer-col-links">
+                        <h5>PROJECTS</h5>
+                        <div class="footer-links-stack">
+                            <a href="#">WordVault</a>
+                            <a href="#">Wrong (Python)</a>
+                            <a href="#">Analytics Portfolio</a>
+                        </div>
+                    </div>
+                    <div class="footer-col-links">
+                        <h5>CONNECT</h5>
+                        <div class="footer-links-stack">
+                            <a href="https://github.com"><span class="icon">🐱</span> GitHub</a>
+                            <a href="#"><span class="icon">📺</span> YouTube</a>
+                            <a href="#"><span class="icon">👥</span> Facebook</a>
+                        </div>
+                    </div>
+                    <div class="footer-col-contact">
+                        <h5>CONTACT</h5>
+                        <div class="footer-contact-link">
+                            <span class="icon">✉️</span>
+                            <a href="mailto:mylesrussell.dev@gmail.com">mylesrussell.dev@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright-bottom">
+                    &copy; 2026 Myles Russell. All rights reserved.
+                </div>
+
+            </footer>
+        </div>
+
+    </div> <!-- End page-wrapper -->
 
 </body>
 </html>
