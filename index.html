@@ -3,197 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordVault - Type it once. Never type it again.</title>
-    <link rel="stylesheet" href="style.css">
+    <title>WordVault | Download Beta</title>
+    <style>
+        /* Reset and clean up all default page gaps */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container that scales perfectly on any browser window */
+        .mockup-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Limits scaling so the text stays perfectly readable */
+        }
+
+        .mockup-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            user-select: none;
+        }
+
+        /* The precise clickable box mapped directly over the big blue hero button */
+        .download-hotspot {
+            position: absolute;
+            top: 25.1%;
+            left: 3.9%;
+            width: 11.2%;
+            height: 2.8%;
+            
+            background: rgba(0, 0, 0, 0); /* Invisible */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Subtle indicator so your friends know it is a real button when hovered */
+        .download-hotspot:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAV CONTAINER BAR -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">WordVault</a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">WordVault</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#download" class="btn-nav-download">Download Beta</a></li>
-            </ul>
-        </div>
-    </header>
+    <div class="mockup-container">
+        <!-- Safely pulls your crisp, flat image asset directly from your GitHub directory -->
+        <img src="mockup.png" alt="WordVault Product Presentation Layout" class="mockup-image">
 
-    <!-- HERO DISPLAY HEADER -->
-    <section class="hero">
-        <div class="container">
-            <span class="badge">Introducing</span>
-            <h1>WordVault<br>Type it once. Never type it again.</h1>
-            <p class="tagline">The simple, secure way to store and instantly access the text, code, prompts, and information you use every day.</p>
-            <div class="hero-buttons">
-                <a href="WordVault_Beta.zip" class="btn-primary" id="download">Download Beta</a>
-                <a href="#" class="btn-secondary">Watch Demo</a>
-            </div>
-            <div class="hero-meta">⚡ Local. Lightweight. Fast.</div>
-            <div class="hero-image-frame">
-                <img src="https://placehold.co" alt="WordVault App Context Overview">
-            </div>
-        </div>
-    </section>
-
-    <!-- STRIP BANNER ACCENT -->
-    <div class="compatibility-strip">
-        Works in any application.
+        <!-- THE 1 WORKING DOWNLOAD LINK -->
+        <!-- Replace the '#' sign below with your real Wormhole, GoFile, or Drive link -->
+        <a href="#" class="download-hotspot" title="Download WordVault Beta"></a>
     </div>
-
-    <!-- CORE CHANNELS GRID -->
-    <section class="container">
-        <h2 class="section-header">Your words, code, and ideas. One click away.</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon-box ic-blue">⚡</div>
-                <h3>Instant Access</h3>
-                <p>Open the widget, click, and insert anywhere you work.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-box ic-purple">📁</div>
-                <h3>Organized Libraries</h3>
-                <p>Create unlimited libraries and keep everything in its place.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-box ic-orange">💻</div>
-                <h3>More Than Text</h3>
-                <p>Store text, code, prompts, templates, images, and more.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-box ic-navy">🔒</div>
-                <h3>Private & Secure<span class="badge-soon">Soon</span></h3>
-                <p>Password lock your vault. Local database encryption coming in the next build.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-box ic-cyan">✨</div>
-                <h3>AI Library Builder<span class="badge-soon">Soon</span></h3>
-                <p>Describe what you need. Let WordVault build the foundation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS WORKSPACE SPLITS -->
-    <section class="showcase-block">
-        <div class="container showcase-grid">
-            <div class="mock-display-group">
-                <img src="https://placehold.co" alt="Manager Panel View" class="mock-pane-left">
-                <img src="https://placehold.co" alt="Dropdown Selector Layout" class="mock-pane-right">
-            </div>
-            <div class="steps-container">
-                <h2>How it works</h2>
-                <ul class="steps-wrapper">
-                    <li class="step-row">
-                        <div class="step-bullet">1</div>
-                        <div class="step-content">
-                            <h3>Create</h3>
-                            <p>Add text, code, prompts, or any content you use frequently.</p>
-                        </div>
-                    </li>
-                    <li class="step-row">
-                        <div class="step-bullet">2</div>
-                        <div class="step-content">
-                            <h3>Organize</h3>
-                            <p>Place it in libraries that make sense for you.</p>
-                        </div>
-                    </li>
-                    <li class="step-row">
-                        <div class="step-bullet">3</div>
-                        <div class="step-content">
-                            <h3>Access Anywhere</h3>
-                            <p>Open the widget, search, click, and insert instantly.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUDIENCE MATRIX MAPS & SECURITY CARDS -->
-    <section class="container info-block">
-        <div class="info-grid">
-            <div class="pane-audience">
-                <h2 class="pane-heading">Built for everyone.<br>Useful for anything.</h2>
-                <p class="pane-sub">From everyday tasks to professional workflows, WordVault adapts to you.</p>
-                <div class="audience-matrix">
-                    <div class="matrix-cell">
-                        <h4>Developers</h4>
-                        <p>Store code snippets, post ideas, assets, and inspiration notes.</p>
-                    </div>
-                    <div class="matrix-cell">
-                        <h4>Writers</h4>
-                        <p>Save templates, ideas, and content you reuse.</p>
-                    </div>
-                    <div class="matrix-cell">
-                        <h4>Creators</h4>
-                        <p>Keep prompts, post ideas, assets, and inspiration.</p>
-                    </div>
-                    <div class="matrix-cell">
-                        <h4>Professionals</h4>
-                        <p>Email responses, reports, templates, and more.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pane-security">
-                <div class="security-card">
-                    <h2 class="pane-heading">Your data stays yours.</h2>
-                    <p class="pane-sub">WordVault currently runs 100% offline on your device. Automated local data encryption protocols and password protection controls are actively being developed for the next beta milestone.</p>
-                    <ul class="security-rows">
-                        <li><span>✓</span> 100% Offline Architecture (Live)</li>
-                        <li><span>✓</span> No External Data Synclines (Live)</li>
-                        <li><span>✓</span> Local Vault Password Access (Soon)</li>
-                        <li><span>✓</span> Secure System-Level Encryption (Soon)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BETA INSTALLATION CTA -->
-    <section class="container">
-        <div class="bottom-cta">
-            <h2>Ready to build your vault?</h2>
-            <p>Join the beta and start saving time today.</p>
-            <a href="WordVault_v1.0.zip" class="btn-bottom">Download WordVault Beta</a>
-        </div>
-    </section>
-
-    <!-- GRID FOOTER MAPPINGS -->
-    <footer>
-        <div class="container footer-matrix">
-            <div class="footer-node">
-                <h4>Myles Russell</h4>
-                <p>Python Developer · Software Creator<br>Building practical software tools that make work faster.</p>
-            </div>
-            <div class="footer-node">
-                <h4>Projects</h4>
-                <ul>
-                    <li><a href="#">WordVault</a></li>
-                    <li><a href="#">Pong (Python)</a></li>
-                    <li><a href="#">Analytics Portfolio</a></li>
-                </ul>
-            </div>
-            <div class="footer-node">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">YouTube</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ul>
-            </div>
-            <div class="footer-node">
-                <h4>Contact</h4>
-                <p>✉ mylesrussell.dev@gmail.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom-text">
-            © 2026 Myles Russell. All rights reserved.
-        </div>
-    </footer>
 
 </body>
 </html>
