@@ -34,20 +34,52 @@
             border-radius: 8px;
             text-align: center;
         }
-        /* Forced Side-by-Side Flex Rows */
+        /* Forced Side-by-Side Flex Rows on Desktop, Stacking on Mobile */
         .split-row {
             display: flex;
+            flex-direction: row; /* Default side-by-side */
             gap: 20px;
             margin-bottom: 20px;
             width: 100%;
         }
-        .full-width-row {
-            width: 100%;
-            margin-bottom: 20px;
+
+        /* 📱 THE RESPONSIVE CHECK: Fixes everything for phones & tablets */
+        @media screen and (max-width: 1024px) {
+            body, html {
+                padding: 12px; /* Gives you slightly more screen space on small devices */
+            }
+            .split-row {
+                flex-direction: column; /* Flips side-by-side rows into clean vertical stacks */
+            }
+            /* Forces rigid widths to fill the phone screen beautifully */
+            .col-5, .col-7 {
+                width: 100% !important;
+            }
+            /* Targets any inline styles with fixed widths/heights and forces them to adapt */
+            div[style*="width: 41.6%"] {
+                width: 100% !important;
+                height: auto !important; /* Kills the 340px height limit so text can grow safely! */
+                padding-right: 0 !important;
+            }
+            /* Makes your navigation header links wrap or stack nicely if needed */
+            div[style*="height: 64px"] {
+                height: auto !important;
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 0 !important;
+            }
+            div[style*="gap: 40px"] {
+                flex-direction: column;
+                gap: 15px !important;
+                width: 100%;
+            }
+            div[style*="gap: 32px"] {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px !important;
+            }
         }
-        /* Rigid layout percentage distribution scales matching your page format precisely */
-        .col-5 { width: 41.6%; }
-        .col-7 { width: 58.4%; }
+
     </style>
 </head>
 <body>
