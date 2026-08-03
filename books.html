@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Series | Myles Russell</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --card-bg: #161a22;
+            --nydos-aqua: #00ffff;
+            --druid-gold: #d4af37;
+            --witch-purple: #a855f7; /* Custom universe color for Walter & The Witch */
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 3rem 1rem;
+            line-height: 1.5;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        header.main-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        header.main-header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Universe Section Styling */
+        .series-section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #242b35;
+        }
+
+        /* Color accents per universe heading */
+        .nydos-heading { color: var(--nydos-aqua); border-image: linear-gradient(to right, var(--nydos-aqua), transparent) 1; }
+        .witch-heading { color: var(--witch-purple); border-image: linear-gradient(to right, var(--witch-purple), transparent) 1; }
+        .standalone-heading { color: var(--text-light); border-image: linear-gradient(to right, var(--text-muted), transparent) 1; }
+
+        /* The Grid System */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .book-card {
+            background-color: var(--card-bg);
+            border: 1px solid #242b35;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .book-card:hover { transform: translateY(-5px); }
+        .nydos-card:hover { border-color: var(--nydos-aqua); }
+        .witch-card:hover { border-color: var(--witch-purple); }
+        .standalone-card:hover { border-color: var(--druid-gold); }
+
+        .cover-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 160%;
+            background-color: #0b0d10;
+        }
+
+        .cover-wrapper img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .book-info {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .series-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .nydos-badge { color: var(--nydos-aqua); }
+        .witch-badge { color: var(--witch-purple); }
+        .standalone-badge { color: var(--text-muted); }
+
+        .book-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .book-btn {
+            margin-top: auto;
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid #374151;
+            padding: 0.6rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .nydos-card .book-btn:hover { background-color: var(--nydos-aqua); color: var(--bg-dark); border-color: var(--nydos-aqua); }
+        .witch-card .book-btn:hover { background-color: var(--witch-purple); color: var(--text-light); border-color: var(--witch-purple); }
+        .standalone-card .book-btn:hover { background-color: var(--druid-gold); color: var(--bg-dark); border-color: var(--druid-gold); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <h1>The Works of Myles Russell</h1>
+            <p style="color: var(--text-muted);">Explore the official fantasy universes and independent novels.</p>
+        </header>
+
+        <!-- UNIVERSE 1: THE MOONS OF NYDOS -->
+        <section class="series-section">
+            <h2 class="section-title nydos-heading">The Moons of Nydos Trilogy</h2>
+            <div class="book-grid">
+                <div class="book-card nydos-card">
+                    <div class="cover-wrapper"><img src="blood-moon-prophecy.png" alt="Book 1"></div>
+                    <div class="book-info">
+                        <span class="series-badge nydos-badge">Book One</span>
+                        <h3 class="book-title">Blood Moon Prophecy</h3>
+                        <a href="#" class="book-btn">Explore Novel</a>
+                    </div>
+                </div>
+                <div class="book-card nydos-card">
+                    <div class="cover-wrapper"><img src="placeholder-cover.png" alt="Book 2"></div>
+                    <div class="book-info">
+                        <span class="series-badge nydos-badge">Book Two</span>
+                        <h3 class="book-title">The Temple of the Shattered Moon</h3>
+                        <a href="#" class="book-btn">Explore Novel</a>
+                    </div>
+                </div>
+                <div class="book-card nydos-card">
+                    <div class="cover-wrapper"><img src="placeholder-cover.png" alt="Book 3"></div>
+                    <div class="book-info">
+                        <span class="series-badge nydos-badge">Book Three</span>
+                        <h3 class="book-title">A God is Born</h3>
+                        <a href="#" class="book-btn">Explore Novel</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIVERSE 2: WALTER AND THE WITCH -->
+        <section class="series-section">
+            <h2 class="section-title witch-heading">Walter and the Witch Series</h2>
+            <div class="book-grid">
+                <div class="book-card witch-card">
+                    <div class="cover-wrapper"><img src="placeholder-cover.png" alt="Walter Book 1"></div>
+                    <div class="book-info">
+                        <span class="series-badge witch-badge">Book One</span>
+                        <h3 class="book-title">Walter and the Witch</h3>
+                        <a href="#" class="book-btn">Explore Novel</a>
+                    </div>
+                </div>
+                <div class="book-card witch-card">
+                    <div class="cover-wrapper"><img src="placeholder-cover.png" alt="Walter Book 2"></div>
+                    <div class="book-info">
+                        <span class="series-badge witch-badge">Book Two</span>
+                        <h3 class="book-title">Title of Book Two</h3>
+                        <a href="#" class="book-btn">Explore Novel</a>
+                    </div>
+                </div>
+                <!-- Duplicate this card block to add books 3 through 12 -->
+            </div>
+        </section>
+
+        <!-- SECTION 3: STANDALONE NOVELS -->
+        <section class="series-section">
+            <h2 class="section-title standalone-heading">Standalone Novels</h2>
+            <div class="book-grid">
+                <div class="book-card standalone-card">
+                    <div class="cover-wrapper"><img src="placeholder-cover.png" alt="Standalone 1"></div>
+                    <div class="book-info">
+                        <span class="series-badge standalone-badge">Independent Work</span>
+                        <h3 class="book-title">Standalone Book Title</h3>
+                        <a href="#" class="book-btn">Explore Novel</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
