@@ -3,29 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myles Russell | CEO & Creator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Myles Russell | Official Author Hub</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-deep: #090b0e;
+            --bg-ambient: radial-gradient(circle at 80% 20%, #0d2025 0%, #090b0e 60%);
+            --glass-panel: rgba(22, 27, 34, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --nydos-aqua: #00ffff;
+            --druid-gold: #d4af37;
+            --witch-purple: #a855f7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-deep);
+            background-image: var(--bg-ambient);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 1. PREMIUM GLASS NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(9, 11, 14, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+        
+        .logo span { color: var(--nydos-aqua); }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-left: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--nydos-aqua);
+        }
+
+        /* 2. CINEMATIC HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--druid-gold);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--nydos-aqua) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--nydos-aqua);
+            border: 2px solid var(--nydos-aqua);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta-button:hover {
+            background: var(--nydos-aqua);
+            color: var(--bg-deep);
+            box-shadow: 0 0 35px rgba(0, 255, 255, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* 3. SHOWCASE FOCUS GRID */
+        .showcase-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 8rem 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3rem;
+        }
+
+        /* 4. FROSTED GLASS CARDS */
+        .universe-card {
+            background: var(--glass-panel);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .universe-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+
+        /* Card specific accents */
+        .card-nydos::before { background: var(--nydos-aqua); }
+        .card-witch::before { background: var(--witch-purple); }
+        .card-standalone::before { background: var(--druid-gold); }
+
+        .universe-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-count {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .card-nydos .card-count { color: var(--nydos-aqua); }
+        .card-witch .card-count { color: var(--witch-purple); }
+        .card-standalone .card-count { color: var(--druid-gold); }
+
+        .universe-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .universe-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .card-link {
+            margin-top: auto;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card-link::after {
+            content: ' →';
+            display: inline-block;
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .universe-card:hover .card-link::after {
+            transform: translateX(5px);
+        }
+
+        /* 5. RESPONSIVE DESIGN SCALING */
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            .nav-links { display: none; } /* Keeps mobile minimal */
+            .hero h1 { font-size: 2.3rem; }
+            .hero p { font-size: 1rem; }
+            .grid-container { grid-template-columns: 1fr; gap: 2rem; }
+            .universe-card { padding: 2rem 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">Myles Russell</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="http://www.mclellancorp.com">McClellan Corp</a>
-            <a href="#portfolio">Portfolio</a>
+    <!-- STYLISH BLURRED HEADER NAVIGATION -->
+    <nav>
+        <div class="logo">Myles <span>Russell</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
             <a href="books.html">Books</a>
-        </nav>
-    </header>
+            <a href="mailto:info@mylesrussell.com">Contact</a>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Myles Russell</h1>
-        <p>CEO of McClellan Corporation. Google Certified Data Analyst, Python Developer, Software Creator, and Author.</p>
-        <div class="cta-buttons">
-            <a href="#portfolio" class="btn">View Tech Work</a>
-            <a href="#library" class="btn secondary">Explore My Books</a>
+        <!-- ATMOSPHERIC CENTRAL HERO CONTAINER -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Technology & Literature Hub</span>
+            <h1>Engineering Software & Building Universes</h1>
+            <p>Founder of McLellan Corporation, developing high-performance productivity platforms and AI-driven privacy software, alongside sprawling dark fantasy sagas.</p>
+            <a href="books.html" class="cta-button" style="margin-right: 1rem;">Explore the Library</a>
+            <a href="https://mclellancorporation.com" class="cta-button" style="border-color: var(--druid-gold); color: var(--druid-gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);">Visit McLellan Corp</a>
+        </div>
+    </section>
+
+    <!-- FROSTED GLASS SHOWCASE -->
+    <section class="showcase-section">
+        <div class="section-header">
+            <h2>The Portfolios</h2>
+        </div>
+
+        <div class="grid-container">
+            
+            <!-- SOFTWARE SUITES PANEL -->
+            <div class="universe-card card-standalone">
+                <span class="card-count">McLellan Corporation</span>
+                <h3>Software & AI Tools</h3>
+                <p>Developing privacy-focused productivity software like Word Vault—an unlimited AI text expander engineered to build massive, subject-oriented pre-written libraries that eliminate wasted time in customer service, home inspection, law, and corporate settings.</p>
+                <a href="https://mclellancorporation.com" class="card-link">Launch Systems</a>
+            </div>
+
+            <!-- UNIVERSE PANEL: NYDOS -->
+            <div class="universe-card card-nydos">
+                <span class="card-count">3-Book Trilogy</span>
+                <h3>The Moons of Nydos</h3>
+                <p>An epic cosmic fantasy tracing a desperate hunter's struggle against crystal corruption across an unforgiving gas-giant horizon system.</p>
+                <a href="books.html" class="card-link">Enter Universe</a>
+            </div>
+
+            <!-- UNIVERSE PANEL: WALTER & THE WITCH -->
+            <div class="universe-card card-witch">
+                <span class="card-count">12-Book Saga</span>
+                <h3>Walter and the Witch</h3>
+                <p>A massive, definitive dark-magic fantasy odyssey tracking intricate spellwork, lineage secrets, and sweeping systemic structural conflicts.</p>
+                <a href="books.html" class="card-link">Enter Universe</a>
+            </div>
+		            <!-- STANDALONE: OUT OF EDEN -->
+            <div class="universe-card card-standalone" style="--druid-gold: #38bdf8;"> <!-- Custom Cyan/Blue tint for AI tech theme -->
+                <span class="card-count">Independent Novel</span>
+                <h3>Out of Eden</h3>
+                <p>A compelling, high-stakes science fiction story exploring artificial intelligence, synthetic realities, and the boundaries of human consciousness.</p>
+                <a href="books.html" class="card-link">Explore Novel</a>
+            </div>
+
+            <!-- STANDALONE: GOOD FOOD FOR THE WORMS -->
+            <div class="universe-card card-standalone" style="--druid-gold: #f43f5e;"> <!-- Custom Crimson tint for the raw human theme -->
+                <span class="card-count">Independent Work</span>
+                <h3>Good Food for the Worms</h3>
+                <p>A raw, insightful self-help philosophy on intentional living, conquering existential dread, and ensuring you leave nothing on the table before you die fulfilled.</p>
+                <a href="books.html" class="card-link">Explore Book</a>
+            </div>
+
+        </div>
+    </section>
+
+
         </div>
     </section>
 
