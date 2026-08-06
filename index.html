@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Myles Russell | Digital Creator, Author, Software Developer</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
-        /* Modern, minimal dark theme canvas */
         body {
             background-color: #0c0d12;
             color: #babcbf;
@@ -15,14 +18,57 @@
             padding: 0;
         }
 
-        /* Two-Column Master Split Layout */
+        /* Top Social Navbar */
+        .top-nav {
+            width: 100%;
+            background-color: #12141c;
+            border-bottom: 1px solid #1f2330;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .top-nav a {
+            color: #898d9c;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .top-nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Professional Introduction */
+        .intro-section {
+            max-width: 1100px;
+            margin: 35px auto;
+            background-color: #12141c;
+            border: 1px solid #1f2330;
+            border-radius: 8px;
+            padding: 35px 45px;
+            box-sizing: border-box;
+        }
+
+        .intro-section h2 {
+            color: #ffffff;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .intro-section p {
+            color: #babcbf;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
         .site-wrapper {
             display: grid;
             grid-template-columns: 280px 1fr;
             min-height: 100vh;
         }
 
-        /* Sticky Left Sidebar for Identity */
         .sidebar {
             background-color: #12141c;
             border-right: 1px solid #1f2330;
@@ -36,7 +82,6 @@
             align-items: center;
         }
 
-        /* Placeholder block for author photo */
         .avatar-placeholder {
             width: 130px;
             height: 130px;
@@ -48,7 +93,7 @@
             justify-content: center;
             color: #616882;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: .9rem;
             margin-bottom: 20px;
         }
 
@@ -57,13 +102,13 @@
             font-size: 1.4rem;
             font-weight: 700;
             margin: 0 0 5px 0;
-            letter-spacing: -0.5px;
+            letter-spacing: -.5px;
             text-align: center;
         }
 
         .author-title {
             color: #616882;
-            font-size: 0.85rem;
+            font-size: .85rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin: 0 0 30px 0;
@@ -81,7 +126,7 @@
             color: #898d9c;
             text-decoration: none;
             padding: 8px 12px;
-            font-size: 0.95rem;
+            font-size: .95rem;
             border-radius: 4px;
             margin-bottom: 5px;
         }
@@ -91,7 +136,6 @@
             color: #ffffff;
         }
 
-        /* Main Workspace Scroll Area */
         .main-workspace {
             padding: 50px 60px;
             max-width: 1000px;
@@ -106,15 +150,34 @@
             border-bottom: 1px solid #1f2330;
             padding-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: .5px;
         }
-        
-        /* Ensure the first section layout remains close to top spacing */
+
         section:first-of-type .section-heading {
             margin-top: 0;
         }
 
-        /* Product Cards Grid Setup */
+	.intro-section {
+    background-color: #12141c;
+    border: 1px solid #1f2330;
+    border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 45px;
+}
+
+.intro-section h2 {
+    color: #ffffff;
+    margin-top: 0;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #1f2330;
+    padding-bottom: 10px;
+}
+
+.intro-section p {
+    color: #babcbf;
+    margin-bottom: 18px;
+}
+
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -138,20 +201,30 @@
 
         .badge {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: .75rem;
             font-weight: bold;
             text-transform: uppercase;
             padding: 3px 8px;
             border-radius: 4px;
             margin-bottom: 12px;
-            letter-spacing: 0.5px;
+            letter-spacing: .5px;
         }
 
-        .badge.dev { background-color: rgba(0, 140, 255, 0.1); color: #00bcff; }
-        .badge.novel { background-color: rgba(255, 69, 0, 0.1); color: #ff4500; }
-        .badge.theory { background-color: rgba(155, 89, 182, 0.1); color: #9b59b6; }
+        .badge.dev {
+            background-color: rgba(0,140,255,.1);
+            color: #00bcff;
+        }
 
-        /* Compact Layout System for Heavy Book Series */
+        .badge.novel {
+            background-color: rgba(255,69,0,.1);
+            color: #ff4500;
+        }
+
+        .badge.theory {
+            background-color: rgba(155,89,182,.1);
+            color: #9b59b6;
+        }
+
         .series-wrapper {
             background-color: #12141c;
             border: 1px solid #1f2330;
@@ -168,7 +241,7 @@
 
         .series-subtitle {
             color: #616882;
-            font-size: 0.85rem;
+            font-size: .85rem;
             margin: 0 0 20px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -180,14 +253,13 @@
             gap: 15px;
         }
 
-        /* Clean placeholder card frames mimicking book spines/covers on a shelf */
         .spine-placeholder {
             background-color: #1a1d29;
             border: 1px dashed #2d3247;
             border-radius: 4px;
             padding: 20px 15px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: .9rem;
             color: #898d9c;
             min-height: 100px;
             display: flex;
@@ -203,119 +275,336 @@
             margin-bottom: 4px;
         }
 
-        /* Mobile adaptation overrides */
+        /* Footer Contact */
+        .site-footer {
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #1f2330;
+            background-color: #12141c;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+
+        .site-footer a {
+            color: #00bcff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .site-footer a:hover {
+            color: #ffffff;
+        }
+
         @media (max-width: 850px) {
-            .site-wrapper { grid-template-columns: 1fr; }
-            .sidebar { height: auto; position: relative; border-right: none; border-bottom: 1px solid #1f2330; padding: 30px; }
-            .main-workspace { padding: 35px 20px; }
+            .site-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #1f2330;
+                padding: 30px;
+            }
+
+            .main-workspace {
+                padding: 35px 20px;
+            }
+
+            .intro-section {
+                margin: 25px 20px;
+                padding: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="site-wrapper">
-        
-        <aside class="sidebar">
-            <div class="avatar-placeholder">Photo Box</div>
-            <h1 class="author-name">Myles Russell</h1>
-            <p class="author-title">Digital Creator, Author, Software Developer</p>
-            
-            <nav class="nav-links">
-                <a href="#software-apps">Software Applications</a>
-                <a href="#nydos-series">The Moons of Nydos</a>
-                <a href="#walter-series">Walter and the Witch</a>
-                <a href="#standalone">Standalone Novels</a>
-            </nav>
-        </aside>
+<!-- Social Media Navbar -->
+<nav class="top-nav">
+    <a href="YOUR_FACEBOOK_LINK" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+    </a>
 
-        <!-- Main Display Panel -->
-        <main class="main-workspace">
-            
-            <!-- SECTION 1: Software Assets -->
-            <section id="software-apps">
-                <div class="section-heading">Software Applications</div>
-                <div class="showcase-grid">
-                    <!-- Word Vault Card -->
-                    <div class="panel-card">
-                        <div class="badge dev">Desktop Application</div>
-                        <h3>Word Vault</h3>
-                        <p>A high-performance vocabulary engine and structural dictionary utility framework created under the McLellan Corporation ecosystem. Designed for optimal linguistic workflows.</p>
-                    </div>
-                    
-                 </div>
-            </section>
+    <a href="YOUR_LINKEDIN_LINK" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
 
-            <!-- SECTION 2: Featured Series (The Moons of Nydos) -->
-            <section id="nydos-series">
-                <div class="section-heading">NOVELS</div>
-                <div class="series-wrapper">
-                    <h3 class="series-title">The Moons of Nydos</h3>
-                    <div class="series-subtitle">Epic Sci-Fi Trilogy</div>
-                    <div class="series-grid">
-                        <div class="spine-placeholder"><span>Nydos: Book 1</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Nydos: Book 2</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Nydos: Book 3</span>[Cover Asset]</div>
-                    </div>
-                </div>
-            </section>
+    <a href="YOUR_YOUTUBE_LINK" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+    </a>
 
-            <!-- SECTION 3: Secondary Series (Walter and the Witch) -->
-            <section id="walter-series">
-                <div class="section-heading"></div>
-                <div class="series-wrapper">
-                    <h3 class="series-title">Walter and the Witch</h3>
-                    <div class="series-subtitle">12-Part Dark Fantasy Saga</div>
-                    <div class="series-grid">
-                        <div class="spine-placeholder"><span>Volume I</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume II</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume III</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume IV</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume V</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume VI</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume VII</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume VIII</span>[Cover Asset]</div>
-			<div class="spine-placeholder"><span>Volume IX</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume X</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume XI</span>[Cover Asset]</div>
-                        <div class="spine-placeholder"><span>Volume XII</span>[Cover Asset]</div>
-                    </div>
-                </div>
-            </section>
+    <a href="YOUR_X_LINK" target="_blank" aria-label="X">
+        <i class="fab fa-x-twitter"></i>
+    </a>
+</nav>
 
-            <!-- SECTION 4: Standalone Literature -->
-            <section id="standalone">
-                <div class="section-heading"></div>
-                <div class="showcase-grid">
-                    <!-- Book 1 -->
-                    <div class="panel-card">
-                        <div class="badge novel">Psychological Thriller</div>
-                        <h3>The Black Water</h3>
-                        <p>The gig economy isn't just a job. It's a killing field. Follow Arthur's calculating plunge from corporate manager to invisible surveillance asset.</p>
-                    </div>
-                    <!-- Book 2 -->
-                    <div class="panel-card">
-                        <div class="badge novel">Existential Suspense</div>
-                        <h3>Good Food for the Worms</h3>
-                        <p>A data-driven corporate analyst discovers the physical architecture of decomposition and metal fabrication inside a hidden salvage yard.</p>
-                    </div>
-                    <!-- Book 3 -->
-                    <div class="panel-card">
-                        <div class="badge novel">Fiction</div>
-                        <h3>Out of Eden</h3>
-                        <p>Standalone suspense novel investigating the raw, unedited boundaries of survival, isolation, and psychological limits.</p>
-                    </div>
-			<!-- Void Theory Paper Card -->
-                    	<div class="panel-card">
-                        <div class="badge theory">Scientific Paper</div>
-                        <h3>Void Theory</h3>
-                        <p>Placeholder text for the Void Theory research paper. Enter abstract details, theoretical framework insights, or an external download link for the full manuscript here.</p>
-                    </div>
-                </div>
-            </section>
 
-        </main>
-    </div>
+<div class="site-wrapper">
 
+<aside class="sidebar">
+
+<div class="avatar-placeholder">Photo Box</div>
+
+<h1 class="author-name">Myles Russell</h1>
+
+<p class="author-title">
+Digital Creator, Author, Software Developer
+</p>
+
+<nav class="nav-links">
+
+<a href="#software-apps">Software Applications</a>
+<a href="#nydos-series">The Moons of Nydos</a>
+<a href="#walter-series">Walter and the Witch</a>
+<a href="#standalone">Standalone Novels</a>
+
+</nav>
+
+</aside>
+
+
+<main class="main-workspace">
+<!-- Professional Summary -->
+<section class="intro-section">
+
+    <h2>About My Work</h2>
+
+    <p>
+        For more than 25 years, I’ve built my career around solving problems, helping customers, and learning new technologies. My experience spans customer service, technical support, operations management, education, and software development, giving me a unique ability to understand both business needs and the people behind them.
+    </p>
+
+    <p>
+        Throughout my career, I’ve worked as an instructor, office manager, customer support representative, sales professional, and operations leader. Those roles taught me how to communicate complex information clearly, resolve customer issues efficiently, manage projects, and continually improve processes.
+    </p>
+
+    <p>
+        More recently, I’ve expanded my technical skills by earning the Google Data Analytics Professional Certificate while developing applications in Python. I’m currently building WordVault, a productivity application designed to help users save time by instantly inserting frequently used text into any application. This project has strengthened my experience with software design, user experience, data management, and product development.
+    </p>
+
+    <p>
+        I’m particularly interested in opportunities involving customer success, technical support, software implementation, operations, or data analytics. I enjoy learning new systems, finding practical solutions, and helping people succeed through technology.
+    </p>
+
+    <p>
+        I’m always looking to connect with professionals who value curiosity, continuous learning, and building products and services that make people’s work easier.
+    </p>
+
+</section>
+
+<section id="software-apps">
+
+<div class="section-heading">
+Software Applications
+</div>
+
+<div class="showcase-grid">
+
+<div class="panel-card">
+
+<div class="badge dev">
+Desktop Application
+</div>
+
+<h3>Word Vault</h3>
+
+<p>
+A high-performance productivity application created under the McLellan Corporation ecosystem. WordVault helps users save time by instantly inserting frequently used text into any application.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- SECTION 2: Featured Series (The Moons of Nydos) -->
+
+<section id="nydos-series">
+
+<div class="section-heading">
+NOVELS
+</div>
+
+<div class="series-wrapper">
+
+<h3 class="series-title">
+The Moons of Nydos
+</h3>
+
+<div class="series-subtitle">
+Epic Fantasy Trilogy
+</div>
+
+<div class="series-grid">
+
+<div class="spine-placeholder">
+<span>Nydos: Book 1</span>
+[Cover Asset]
+</div>
+
+<div class="spine-placeholder">
+<span>Nydos: Book 2</span>
+[Cover Asset]
+</div>
+
+<div class="spine-placeholder">
+<span>Nydos: Book 3</span>
+[Cover Asset]
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SECTION 3: Walter and the Witch -->
+
+<section id="walter-series">
+
+<div class="section-heading"></div>
+
+<div class="series-wrapper">
+
+<h3 class="series-title">
+Walter and the Witch
+</h3>
+
+<div class="series-subtitle">
+12-Part Dark Fantasy Saga
+</div>
+
+
+<div class="series-grid">
+
+<div class="spine-placeholder"><span>Volume I</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume II</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume III</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume IV</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume V</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume VI</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume VII</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume VIII</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume IX</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume X</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume XI</span>[Cover Asset]</div>
+<div class="spine-placeholder"><span>Volume XII</span>[Cover Asset]</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SECTION 4: Standalone Literature -->
+
+<section id="standalone">
+
+<div class="section-heading"></div>
+
+
+<div class="showcase-grid">
+
+
+<div class="panel-card">
+
+<div class="badge novel">
+Psychological Thriller
+</div>
+
+<h3>
+The Black Water
+</h3>
+
+<p>
+The gig economy isn't just a job. It's a killing field. Follow Arthur's calculating plunge from corporate manager to invisible surveillance asset.
+</p>
+
+</div>
+
+
+
+<div class="panel-card">
+
+<div class="badge novel">
+Existential Suspense
+</div>
+
+<h3>
+Good Food for the Worms
+</h3>
+
+<p>
+A data-driven corporate analyst discovers the physical architecture of decomposition and metal fabrication inside a hidden salvage yard.
+</p>
+
+</div>
+
+
+
+<div class="panel-card">
+
+<div class="badge novel">
+Fiction
+</div>
+
+<h3>
+Out of Eden
+</h3>
+
+<p>
+A standalone suspense novel investigating the raw, unedited boundaries of survival, isolation, and psychological limits.
+</p>
+
+</div>
+
+
+
+<div class="panel-card">
+
+<div class="badge theory">
+Scientific Paper
+</div>
+
+<h3>
+Void Theory
+</h3>
+
+<p>
+A theoretical exploration of the structure and nature of the universe. Additional research notes, abstracts, and manuscript details will be added here.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<!-- Bottom Contact -->
+
+<footer class="site-footer">
+
+<a href="mailto:therealmylesrussell@gmail.com">
+Contact: therealmylesrussell@gmail.com
+</a>
+
+</footer>
+
+	
 </body>
 </html>
+
 
